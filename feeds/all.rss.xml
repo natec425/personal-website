@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<rss version="2.0">
+ <channel>
+  <title>Nate Clark: Nate Clark</title>
+  <description>Nate Clark: Nate Clark</description>
+  <link>http://www.example.com/index.html</link>
+  <lastBuildDate>Thu, 18 Aug 2016 21:33:34 UT</lastBuildDate>
+  <pubDate>Thu, 18 Aug 2016 21:33:34 UT</pubDate>
+  <ttl>1800</ttl>
+  <item>
+   <title>Hello World</title>
+   <link>http://www.example.com/blog/2016/08/18/hello-world/?utm_source=all&amp;utm_medium=RSS</link>
+   <guid>urn:http-www-example-com:-blog-2016-08-18-hello-world</guid>
+   <pubDate>Thu, 18 Aug 2016 21:33:34 UT</pubDate>
+   <description>&lt;html&gt;
+&lt;h2 id="it-always-starts-with-hello-world"&gt;It always starts with &amp;ldquo;Hello World.&amp;rdquo;&lt;/h2&gt;
+
+&lt;p&gt;More to come later. I&amp;rsquo;ll probably post about &lt;a href="https://www.basecampcodingacademy.org"&gt;teaching software development&lt;/a&gt; and functional programming.&lt;/p&gt;&lt;/html&gt;</description></item></channel></rss>

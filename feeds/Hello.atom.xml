@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+ <title type="text">Nate Clark: Posts tagged 'Hello'</title>
+ <link rel="self" href="http://www.example.com/feeds/Hello.atom.xml" />
+ <link href="http://www.example.com/tags/Hello.html" />
+ <id>urn:http-www-example-com:-tags-Hello-html</id>
+ <updated>2016-08-18T21:33:34Z</updated>
+ <entry>
+  <title type="text">Hello World</title>
+  <link rel="alternate" href="http://www.example.com/blog/2016/08/18/hello-world/?utm_source=Hello&amp;utm_medium=Atom" />
+  <id>urn:http-www-example-com:-blog-2016-08-18-hello-world</id>
+  <published>2016-08-18T21:33:34Z</published>
+  <updated>2016-08-18T21:33:34Z</updated>
+  <author>
+   <name>Nate Clark</name></author>
+  <content type="html">&lt;html&gt;
+&lt;h2 id="it-always-starts-with-hello-world"&gt;It always starts with &amp;ldquo;Hello World.&amp;rdquo;&lt;/h2&gt;
+
+&lt;p&gt;More to come later. I&amp;rsquo;ll probably post about &lt;a href="https://www.basecampcodingacademy.org"&gt;teaching software development&lt;/a&gt; and functional programming.&lt;/p&gt;&lt;/html&gt;</content></entry></feed>
