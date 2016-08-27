@@ -11,3 +11,13 @@ pre {
     white-space: pre;
     width: inherit;
 }
+
+#voltorb-flip * {
+    box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+}
+
+#voltorb-flip button {
+    color: black;    
+}

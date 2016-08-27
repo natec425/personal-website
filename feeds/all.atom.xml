@@ -4,7 +4,36 @@
  <link rel="self" href="http://www.example.com/feeds/all.atom.xml" />
  <link href="http://www.example.com/index.html" />
  <id>urn:http-www-example-com:-index-html</id>
- <updated>2016-08-18T21:33:34Z</updated>
+ <updated>2016-08-26T16:09:18Z</updated>
+ <entry>
+  <title type="text">Voltorb Flip in Elm</title>
+  <link rel="alternate" href="http://www.example.com/blog/2016/08/26/voltorb-flip-in-elm/?utm_source=all&amp;utm_medium=Atom" />
+  <id>urn:http-www-example-com:-blog-2016-08-26-voltorb-flip-in-elm</id>
+  <published>2016-08-26T16:09:18Z</published>
+  <updated>2016-08-26T16:09:18Z</updated>
+  <author>
+   <name>Nate Clark</name></author>
+  <content type="html">&lt;html&gt;
+&lt;p&gt;We all suffer from attacks of nostalgia, and I&amp;rsquo;m no different. Unfortunately, many of my weaknesses drive me to do ludicrous things like re-subscribe to &lt;a href="https://worldofwarcraft.com/en-us/" title="World of Warcraft"&gt;World of Warcraft&lt;/a&gt;, listen to crappy emo bands (I&amp;rsquo;ll spare you the links), or &amp;hellip; acquiring &amp;hellip; the latest Pokemon game. I&amp;rsquo;ll be honest, I&amp;rsquo;m not super proud of the last one. I&amp;rsquo;ve never been one to pirate anything, but I have occasionally convinced myself that I should grab the latest ROM, burn 2 hours of my life away, and continue about my business. So of course, &lt;a href="http://www.pokemongo.com/" title="Pokemon Go"&gt;Pokemon Go&lt;/a&gt; should have tossed me off the bandwagon, but this time around the fan-made &lt;a href="http://www.pokemonuranium.com/" title="Pokemon Uranium"&gt;Pokemon Uranium&lt;/a&gt; caught my fall into piracy.&lt;/p&gt;
+&lt;!-- more--&gt;
+
+&lt;p&gt;In Pokemon Uranium (and apparently &lt;a href="http://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_HeartGold_and_SoulSilver_Versions" title="HeartGold and SoulSilver"&gt;HeartGold and SoulSilver&lt;/a&gt;), there is a minesweeper-esque mini-game called &lt;a href="http://bulbapedia.bulbagarden.net/wiki/Voltorb_Flip" title="Voltorb Flip"&gt;Voltorb Flip&lt;/a&gt;. I thought the game was neat, and a few of the students at &lt;a href="https://basecampcodingacademy.org/" title="Base Camp Coding Academy"&gt;Base Camp Coding Academy&lt;/a&gt; are Pokemon fans, so I thought it could provide an opportunity to talk about what a simple AI for the game might look like. Of course, &lt;a href="http://www.voltorbflip.com/" title="Voltorb Flip Solver"&gt;the internet has already done it&lt;/a&gt;, but education is often about rolling your own. I typically hate front-end development, but when I heard there was a &lt;a href="https://en.wikipedia.org/wiki/Reactive_programming" title="Reactive Programming"&gt;Reactive&lt;/a&gt; &lt;a href="https://en.wikipedia.org/wiki/ML_(programming_language)" title="ML"&gt;ML&lt;/a&gt; in the browser (&lt;a href="http://elm-lang.org" title="Elm"&gt;Elm&lt;/a&gt;) I thought I should give it a shot.&lt;/p&gt;
+
+&lt;h3 id="buggy-pokemon"&gt;Buggy Pokemon&lt;/h3&gt;
+
+&lt;p&gt;The game is almost finished, but there is a bug related to generating a new game. The goal of the game is to expose all the cells that contain a 2 or a 3 and not expose a mine. The numbers at the ends of the columns/rows indicate the number of points (green) and mines (red) in that row or column. Feel free to poke around with my broken implementation.&lt;/p&gt;
+
+&lt;div id="voltorb-flip"&gt;&lt;/div&gt;
+
+&lt;script src="/js/voltorb_flip.js"&gt;&lt;/script&gt;
+
+&lt;script&gt;
+    var node = document.getElementById('voltorb-flip');
+    var app = Elm.Game.embed(node);&lt;/script&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;Not the sexiest bit of front end work, but I&amp;rsquo;ll take it. Next week, I hope to post a corrected implementation. Expect plenty of technical detail on working with Elm and where I went wrong this week.&lt;/p&gt;&lt;/html&gt;</content></entry>
  <entry>
   <title type="text">It Always Starts With "Hello World"</title>
   <link rel="alternate" href="http://www.example.com/blog/2016/08/18/it-always-starts-with-hello-world/?utm_source=all&amp;utm_medium=Atom" />

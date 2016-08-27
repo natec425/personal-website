@@ -3,15 +3,15 @@
   <head>
 
     <meta charset="utf-8">
-    <title>It Always Starts With "Hello World"</title>
-    <meta name="description" content="More to come later. I'll probably post about teaching software development and functional programming....">
+    <title>Voltorb Flip in Elm</title>
+    <meta name="description" content="We all suffer from attacks of nostalgia, and I'm no different. Unfortunately, many of my weaknesses drive me to do ludicrous things like re-subscribe to World of Warcraft, listen to crappy emo bands (I'll spare you the links), or  acquiring  the latest Po...">
     <meta name="author"      content="Nate Clark">
-    <meta name="keywords"    content="Hello">
+    <meta name="keywords"    content="Functional Programming, Elm, Pokemon">
     <meta name="viewport"    content="width=device-width, initial-scale=1.0">
     <link rel="icon"      href="/favicon.ico">
-    <link rel="canonical" href="http://www.example.com/blog/2016/08/18/it-always-starts-with-hello-world/">
+    <link rel="canonical" href="http://www.example.com/blog/2016/08/26/voltorb-flip-in-elm/">
+    <link rel="next" href="/blog/2016/08/18/it-always-starts-with-hello-world/">
 
-    <link rel="prev" href="/blog/2016/08/26/voltorb-flip-in-elm/">
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/pygments.css">
@@ -88,12 +88,31 @@
 
           <article>
   <header>
-    <h1>It Always Starts With &ldquo;Hello World&rdquo;</h1>
+    <h1>Voltorb Flip in Elm</h1>
     <p class='date-and-tags'>
-<time datetime="2016-08-18" pubdate="true">2016-08-18</time> :: <span class="tags"><a href="/tags/Hello.html">Hello</a></span></p>
+<time datetime="2016-08-26" pubdate="true">2016-08-26</time> :: <span class="tags"><a href="/tags/Functional-Programming.html">Functional Programming</a>, <a href="/tags/Elm.html">Elm</a>, <a href="/tags/Pokemon.html">Pokemon</a></span></p>
   </header>
 
-<p>More to come later. I&rsquo;ll probably post about <a href="https://www.basecampcodingacademy.org">teaching software development</a> and functional programming.</p>
+<p>We all suffer from attacks of nostalgia, and I&rsquo;m no different. Unfortunately, many of my weaknesses drive me to do ludicrous things like re-subscribe to <a href="https://worldofwarcraft.com/en-us/" title="World of Warcraft">World of Warcraft</a>, listen to crappy emo bands (I&rsquo;ll spare you the links), or &hellip; acquiring &hellip; the latest Pokemon game. I&rsquo;ll be honest, I&rsquo;m not super proud of the last one. I&rsquo;ve never been one to pirate anything, but I have occasionally convinced myself that I should grab the latest ROM, burn 2 hours of my life away, and continue about my business. So of course, <a href="http://www.pokemongo.com/" title="Pokemon Go">Pokemon Go</a> should have tossed me off the bandwagon, but this time around the fan-made <a href="http://www.pokemonuranium.com/" title="Pokemon Uranium">Pokemon Uranium</a> caught my fall into piracy.</p>
+<!-- more-->
+
+<p>In Pokemon Uranium (and apparently <a href="http://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_HeartGold_and_SoulSilver_Versions" title="HeartGold and SoulSilver">HeartGold and SoulSilver</a>), there is a minesweeper-esque mini-game called <a href="http://bulbapedia.bulbagarden.net/wiki/Voltorb_Flip" title="Voltorb Flip">Voltorb Flip</a>. I thought the game was neat, and a few of the students at <a href="https://basecampcodingacademy.org/" title="Base Camp Coding Academy">Base Camp Coding Academy</a> are Pokemon fans, so I thought it could provide an opportunity to talk about what a simple AI for the game might look like. Of course, <a href="http://www.voltorbflip.com/" title="Voltorb Flip Solver">the internet has already done it</a>, but education is often about rolling your own. I typically hate front-end development, but when I heard there was a <a href="https://en.wikipedia.org/wiki/Reactive_programming" title="Reactive Programming">Reactive</a> <a href="https://en.wikipedia.org/wiki/ML_(programming_language)" title="ML">ML</a> in the browser (<a href="http://elm-lang.org" title="Elm">Elm</a>) I thought I should give it a shot.</p>
+
+<h3 id="buggy-pokemon">Buggy Pokemon</h3>
+
+<p>The game is almost finished, but there is a bug related to generating a new game. The goal of the game is to expose all the cells that contain a 2 or a 3 and not expose a mine. The numbers at the ends of the columns/rows indicate the number of points (green) and mines (red) in that row or column. Feel free to poke around with my broken implementation.</p>
+
+<div id="voltorb-flip"></div>
+
+<script src="/js/voltorb_flip.js"></script>
+
+<script>
+    var node = document.getElementById('voltorb-flip');
+    var app = Elm.Game.embed(node);</script>
+
+<p></p>
+
+<p>Not the sexiest bit of front end work, but I&rsquo;ll take it. Next week, I hope to post a corrected implementation. Expect plenty of technical detail on working with Elm and where I went wrong this week.</p>
   <footer>
     <script type="text/javascript">
       !function(d,s,id){
@@ -108,11 +127,11 @@
     </script>
     <a href="https://twitter.com/share"
        class="twitter-share-button"
-       data-url="http://www.example.com/blog/2016/08/18/it-always-starts-with-hello-world/"
+       data-url="http://www.example.com/blog/2016/08/26/voltorb-flip-in-elm/"
        data-dnt="true">
       "Tweet"</a>
     <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
-    <g:plusone size="medium" href="http://www.example.com/blog/2016/08/18/it-always-starts-with-hello-world/"></g:plusone>
+    <g:plusone size="medium" href="http://www.example.com/blog/2016/08/26/voltorb-flip-in-elm/"></g:plusone>
     <script type="text/javascript">
       var disqus_shortname = 'shortname';
       (function() {
@@ -125,10 +144,10 @@
     </script>
     <div id="disqus_thread"></div>
     <ul class="pager">
-    <li class="previous">
-      <a href="/blog/2016/08/26/voltorb-flip-in-elm/">&larr; <em>Voltorb Flip in Elm</em></a>
-    </li>
 
+    <li class="next">
+      <a href="/blog/2016/08/18/it-always-starts-with-hello-world/"><em>It Always Starts With &ldquo;Hello World&rdquo;</em> &rarr;</a>
+    </li>
     </ul>
   </footer>
 </article>

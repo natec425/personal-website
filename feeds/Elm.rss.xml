@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <rss version="2.0">
  <channel>
-  <title>Nate Clark: Nate Clark</title>
-  <description>Nate Clark: Nate Clark</description>
-  <link>http://www.example.com/index.html</link>
+  <title>Nate Clark: Posts tagged 'Elm'</title>
+  <description>Nate Clark: Posts tagged 'Elm'</description>
+  <link>http://www.example.com/tags/Elm.html</link>
   <lastBuildDate>Fri, 26 Aug 2016 16:09:18 UT</lastBuildDate>
   <pubDate>Fri, 26 Aug 2016 16:09:18 UT</pubDate>
   <ttl>1800</ttl>
   <item>
    <title>Voltorb Flip in Elm</title>
-   <link>http://www.example.com/blog/2016/08/26/voltorb-flip-in-elm/?utm_source=all&amp;utm_medium=RSS</link>
+   <link>http://www.example.com/blog/2016/08/26/voltorb-flip-in-elm/?utm_source=Elm&amp;utm_medium=RSS</link>
    <guid>urn:http-www-example-com:-blog-2016-08-26-voltorb-flip-in-elm</guid>
    <pubDate>Fri, 26 Aug 2016 16:09:18 UT</pubDate>
    <description>&lt;html&gt;
@@ -32,11 +32,4 @@
 
 &lt;p&gt;&lt;/p&gt;
 
-&lt;p&gt;Not the sexiest bit of front end work, but I&amp;rsquo;ll take it. Next week, I hope to post a corrected implementation. Expect plenty of technical detail on working with Elm and where I went wrong this week.&lt;/p&gt;&lt;/html&gt;</description></item>
-  <item>
-   <title>It Always Starts With "Hello World"</title>
-   <link>http://www.example.com/blog/2016/08/18/it-always-starts-with-hello-world/?utm_source=all&amp;utm_medium=RSS</link>
-   <guid>urn:http-www-example-com:-blog-2016-08-18-it-always-starts-with-hello-world</guid>
-   <pubDate>Thu, 18 Aug 2016 21:33:34 UT</pubDate>
-   <description>&lt;html&gt;
-&lt;p&gt;More to come later. I&amp;rsquo;ll probably post about &lt;a href="https://www.basecampcodingacademy.org"&gt;teaching software development&lt;/a&gt; and functional programming.&lt;/p&gt;&lt;/html&gt;</description></item></channel></rss>
+&lt;p&gt;Not the sexiest bit of front end work, but I&amp;rsquo;ll take it. Next week, I hope to post a corrected implementation. Expect plenty of technical detail on working with Elm and where I went wrong this week.&lt;/p&gt;&lt;/html&gt;</description></item></channel></rss>

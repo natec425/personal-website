@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?> 
-<rss version="2.0">
- <channel>
-  <title>Nate Clark: Nate Clark</title>
-  <description>Nate Clark: Nate Clark</description>
-  <link>http://www.example.com/index.html</link>
-  <lastBuildDate>Fri, 26 Aug 2016 16:09:18 UT</lastBuildDate>
-  <pubDate>Fri, 26 Aug 2016 16:09:18 UT</pubDate>
-  <ttl>1800</ttl>
-  <item>
-   <title>Voltorb Flip in Elm</title>
-   <link>http://www.example.com/blog/2016/08/26/voltorb-flip-in-elm/?utm_source=all&amp;utm_medium=RSS</link>
-   <guid>urn:http-www-example-com:-blog-2016-08-26-voltorb-flip-in-elm</guid>
-   <pubDate>Fri, 26 Aug 2016 16:09:18 UT</pubDate>
-   <description>&lt;html&gt;
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+ <title type="text">Nate Clark: Posts tagged 'Pokemon'</title>
+ <link rel="self" href="http://www.example.com/feeds/Pokemon.atom.xml" />
+ <link href="http://www.example.com/tags/Pokemon.html" />
+ <id>urn:http-www-example-com:-tags-Pokemon-html</id>
+ <updated>2016-08-26T16:09:18Z</updated>
+ <entry>
+  <title type="text">Voltorb Flip in Elm</title>
+  <link rel="alternate" href="http://www.example.com/blog/2016/08/26/voltorb-flip-in-elm/?utm_source=Pokemon&amp;utm_medium=Atom" />
+  <id>urn:http-www-example-com:-blog-2016-08-26-voltorb-flip-in-elm</id>
+  <published>2016-08-26T16:09:18Z</published>
+  <updated>2016-08-26T16:09:18Z</updated>
+  <author>
+   <name>Nate Clark</name></author>
+  <content type="html">&lt;html&gt;
 &lt;p&gt;We all suffer from attacks of nostalgia, and I&amp;rsquo;m no different. Unfortunately, many of my weaknesses drive me to do ludicrous things like re-subscribe to &lt;a href="https://worldofwarcraft.com/en-us/" title="World of Warcraft"&gt;World of Warcraft&lt;/a&gt;, listen to crappy emo bands (I&amp;rsquo;ll spare you the links), or &amp;hellip; acquiring &amp;hellip; the latest Pokemon game. I&amp;rsquo;ll be honest, I&amp;rsquo;m not super proud of the last one. I&amp;rsquo;ve never been one to pirate anything, but I have occasionally convinced myself that I should grab the latest ROM, burn 2 hours of my life away, and continue about my business. So of course, &lt;a href="http://www.pokemongo.com/" title="Pokemon Go"&gt;Pokemon Go&lt;/a&gt; should have tossed me off the bandwagon, but this time around the fan-made &lt;a href="http://www.pokemonuranium.com/" title="Pokemon Uranium"&gt;Pokemon Uranium&lt;/a&gt; caught my fall into piracy.&lt;/p&gt;
 &lt;!-- more--&gt;
 
@@ -32,11 +33,4 @@
 
 &lt;p&gt;&lt;/p&gt;
 
-&lt;p&gt;Not the sexiest bit of front end work, but I&amp;rsquo;ll take it. Next week, I hope to post a corrected implementation. Expect plenty of technical detail on working with Elm and where I went wrong this week.&lt;/p&gt;&lt;/html&gt;</description></item>
-  <item>
-   <title>It Always Starts With "Hello World"</title>
-   <link>http://www.example.com/blog/2016/08/18/it-always-starts-with-hello-world/?utm_source=all&amp;utm_medium=RSS</link>
-   <guid>urn:http-www-example-com:-blog-2016-08-18-it-always-starts-with-hello-world</guid>
-   <pubDate>Thu, 18 Aug 2016 21:33:34 UT</pubDate>
-   <description>&lt;html&gt;
-&lt;p&gt;More to come later. I&amp;rsquo;ll probably post about &lt;a href="https://www.basecampcodingacademy.org"&gt;teaching software development&lt;/a&gt; and functional programming.&lt;/p&gt;&lt;/html&gt;</description></item></channel></rss>
+&lt;p&gt;Not the sexiest bit of front end work, but I&amp;rsquo;ll take it. Next week, I hope to post a corrected implementation. Expect plenty of technical detail on working with Elm and where I went wrong this week.&lt;/p&gt;&lt;/html&gt;</content></entry></feed>
