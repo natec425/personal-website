@@ -3,15 +3,15 @@
   <head>
 
     <meta charset="utf-8">
-    <title>Voltorb Flip in Elm</title>
-    <meta name="description" content="We all suffer from attacks of nostalgia, and I'm no different. Unfortunately, many of my weaknesses drive me to do ludicrous things like re-subscribe to World of Warcraft, listen to crappy emo bands (I'll spare you the links), or  acquiring  the latest Po...">
+    <title>Short Post: Voltorb Flip AI</title>
+    <meta name="description" content="So this week is going to be super short. I finished a first pass at getting a (possibly bad) AI to auto play the game. Also, I'm still enjoying Elm a lot. I feel like I don't have to dread the browser anymore....">
     <meta name="author"      content="Nate Clark">
-    <meta name="keywords"    content="Functional Programming, Elm, Pokemon">
+    <meta name="keywords"    content="Functional Programming, Elm, Pokemon, AI">
     <meta name="viewport"    content="width=device-width, initial-scale=1.0">
     <link rel="icon"      href="/favicon.ico">
-    <link rel="canonical" href="http://www.example.com/blog/2016/08/26/voltorb-flip-in-elm/">
-    <link rel="next" href="/blog/2016/08/18/it-always-starts-with-hello-world/">
-    <link rel="prev" href="/blog/2016/09/02/voltorb-flip-in-elm-pt-2/">
+    <link rel="canonical" href="http://www.example.com/blog/2016/09/09/short-post-voltorb-flip-ai/">
+    <link rel="next" href="/blog/2016/09/02/voltorb-flip-in-elm-pt-2/">
+
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/pygments.css">
@@ -90,31 +90,41 @@
 
           <article>
   <header>
-    <h1>Voltorb Flip in Elm</h1>
+    <h1>Short Post: Voltorb Flip AI</h1>
     <p class='date-and-tags'>
-<time datetime="2016-08-26" pubdate="true">2016-08-26</time> :: <span class="tags"><a href="/tags/Functional-Programming.html">Functional Programming</a>, <a href="/tags/Elm.html">Elm</a>, <a href="/tags/Pokemon.html">Pokemon</a></span></p>
+<time datetime="2016-09-09" pubdate="true">2016-09-09</time> :: <span class="tags"><a href="/tags/Functional-Programming.html">Functional Programming</a>, <a href="/tags/Elm.html">Elm</a>, <a href="/tags/Pokemon.html">Pokemon</a>, <a href="/tags/AI.html">AI</a></span></p>
   </header>
 
-<p>We all suffer from attacks of nostalgia, and I&rsquo;m no different. Unfortunately, many of my weaknesses drive me to do ludicrous things like re-subscribe to <a href="https://worldofwarcraft.com/en-us/" title="World of Warcraft">World of Warcraft</a>, listen to crappy emo bands (I&rsquo;ll spare you the links), or &hellip; acquiring &hellip; the latest Pokemon game. I&rsquo;ll be honest, I&rsquo;m not super proud of the last one. I&rsquo;ve never been one to pirate anything, but I have occasionally convinced myself that I should grab the latest ROM, burn 2 hours of my life away, and continue about my business. So of course, <a href="http://www.pokemongo.com/" title="Pokemon Go">Pokemon Go</a> should have tossed me off the bandwagon, but this time around the fan-made <a href="http://www.pokemonuranium.com/" title="Pokemon Uranium">Pokemon Uranium</a> caught my fall into piracy.</p>
+<p>So this week is going to be super short. I finished a first pass at getting a (possibly bad) AI to auto play the game. Also, I&rsquo;m still enjoying Elm a lot. I feel like I don&rsquo;t have to dread the browser anymore.</p>
 <!-- more-->
 
-<p>In Pokemon Uranium (and apparently <a href="http://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_HeartGold_and_SoulSilver_Versions" title="HeartGold and SoulSilver">HeartGold and SoulSilver</a>), there is a minesweeper-esque mini-game called <a href="http://bulbapedia.bulbagarden.net/wiki/Voltorb_Flip" title="Voltorb Flip">Voltorb Flip</a>. I thought the game was neat, and a few of the students at <a href="https://basecampcodingacademy.org/" title="Base Camp Coding Academy">Base Camp Coding Academy</a> are Pokemon fans, so I thought it could provide an opportunity to talk about what a simple AI for the game might look like. Of course, <a href="http://www.voltorbflip.com/" title="Voltorb Flip Solver">the internet has already done it</a>, but education is often about rolling your own. I typically hate front-end development, but when I heard there was a <a href="https://en.wikipedia.org/wiki/Reactive_programming" title="Reactive Programming">Reactive</a> <a href="https://en.wikipedia.org/wiki/ML_(programming_language)" title="ML">ML</a> in the browser (<a href="http://elm-lang.org" title="Elm">Elm</a>) I thought I should give it a shot.</p>
+<h3 id="super-simple-ai">Super Simple AI</h3>
 
-<h3 id="buggy-pokemon">Buggy Pokemon</h3>
-
-<p>The game is almost finished, but there is a bug related to generating a new game. The goal of the game is to expose all the cells that contain a 2 or a 3 and not expose a mine. The numbers at the ends of the columns/rows indicate the number of points (green) and mines (red) in that row or column. Feel free to poke around with my broken implementation.</p>
+<p>Go forth and earn me unusable points.</p>
 
 <div id="voltorb-flip"></div>
 
-<script src="/js/voltorb_flip.js"></script>
+<script src="/js/voltorb-flip-3.js"></script>
 
 <script>
-    var node = document.getElementById('voltorb-flip');
-    var app = Elm.Game.embed(node);</script>
+var node = document.getElementById('voltorb-flip');
+var app = Elm.AI.Main.embed(node);</script>
 
 <p></p>
 
-<p>Not the sexiest bit of front end work, but I&rsquo;ll take it. Next week, I hope to post a corrected implementation. Expect plenty of technical detail on working with Elm and where I went wrong this week.</p>
+<p>Currently the AI has uses some notion of expected points per cell. For example, a cell that must be either a 2 or a 3 should have an expected value of 2.5 The just exposes the cell with the highest expected points until it wins or loses.</p>
+
+<h3 id="elm-has-been-great">Elm has been great</h3>
+
+<p>So far the project is about 500 lines of elm, and it has been a pleasure. It has been surprisingly pleasant to add or change features. I would be interested to see what this project would look like if it were implemented using javascript/typescript/coffeescript/etc. I don&rsquo;t know if my implementation would be or worse. In fact, I would bet mine would be worse in some ways. I wouldn&rsquo;t be surprised if my implementation was more correct or maintainable. Elm can take a good bit of credit for helping with that. But my use of non-Elm web tech should probably be pretty poor. Also, my use of Elm should probably be pretty poor (less than 1 month of experience).</p>
+
+<p>The code is <a href="https://github.com/natec425/Voltorb-Flip">up on github</a>. Feel free to disapprove of the lack of documentation or tests. I approve of your disapproval and hope to fix it soon.</p>
+
+<p>But hey, at least I don&rsquo;t hate the browser anymore.</p>
+
+<h3 id="next-week">Next Week</h3>
+
+<p>A student at Base Camp keeps asking me to make a learning AI. Maybe I&rsquo;ll make another bad AI, but this time&hellip; it will learn. No click bait deep learning. Just regular old vanilla reinforcement.</p>
   <footer>
     <script type="text/javascript">
       !function(d,s,id){
@@ -129,11 +139,11 @@
     </script>
     <a href="https://twitter.com/share"
        class="twitter-share-button"
-       data-url="http://www.example.com/blog/2016/08/26/voltorb-flip-in-elm/"
+       data-url="http://www.example.com/blog/2016/09/09/short-post-voltorb-flip-ai/"
        data-dnt="true">
       "Tweet"</a>
     <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
-    <g:plusone size="medium" href="http://www.example.com/blog/2016/08/26/voltorb-flip-in-elm/"></g:plusone>
+    <g:plusone size="medium" href="http://www.example.com/blog/2016/09/09/short-post-voltorb-flip-ai/"></g:plusone>
     <script type="text/javascript">
       var disqus_shortname = 'shortname';
       (function() {
@@ -146,11 +156,9 @@
     </script>
     <div id="disqus_thread"></div>
     <ul class="pager">
-    <li class="previous">
-      <a href="/blog/2016/09/02/voltorb-flip-in-elm-pt-2/">&larr; <em>Voltorb Flip in Elm pt 2</em></a>
-    </li>
+
     <li class="next">
-      <a href="/blog/2016/08/18/it-always-starts-with-hello-world/"><em>It Always Starts With &ldquo;Hello World&rdquo;</em> &rarr;</a>
+      <a href="/blog/2016/09/02/voltorb-flip-in-elm-pt-2/"><em>Voltorb Flip in Elm pt 2</em> &rarr;</a>
     </li>
     </ul>
   </footer>
