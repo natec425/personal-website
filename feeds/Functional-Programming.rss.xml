@@ -4,9 +4,115 @@
   <title>Nate Clark: Posts tagged 'Functional Programming'</title>
   <description>Nate Clark: Posts tagged 'Functional Programming'</description>
   <link>http://www.example.com/tags/Functional-Programming.html</link>
-  <lastBuildDate>Sat, 10 Sep 2016 02:40:08 UT</lastBuildDate>
-  <pubDate>Sat, 10 Sep 2016 02:40:08 UT</pubDate>
+  <lastBuildDate>Sat, 17 Sep 2016 01:18:29 UT</lastBuildDate>
+  <pubDate>Sat, 17 Sep 2016 01:18:29 UT</pubDate>
   <ttl>1800</ttl>
+  <item>
+   <title>AI Reuse pt 1</title>
+   <link>http://www.example.com/blog/2016/09/16/ai-reuse-pt-1/?utm_source=Functional-Programming&amp;utm_medium=RSS</link>
+   <guid>urn:http-www-example-com:-blog-2016-09-16-ai-reuse-pt-1</guid>
+   <pubDate>Sat, 17 Sep 2016 01:18:29 UT</pubDate>
+   <description>&lt;html&gt;
+&lt;p&gt;I thought a list of independently playing Voltorb Flip AIs would be pretty neat. So, I did it. Right now, it is my original &amp;ldquo;expectation&amp;rdquo; based AI alongside a random AI. I wanted to add a simple learning AI this week, but I started too late. However, I did learn to appreciate some important differences and similarities in the nature of the random AI and the (soon to be) learning AI.&lt;/p&gt;
+&lt;!-- more--&gt;
+
+&lt;h3 id="plugging-in-a-new-brain"&gt;Plugging In A New Brain&lt;/h3&gt;
+
+&lt;p&gt;Of course, I refuse to copy/paste/edit my original AI to produce a new one. What I need isn&amp;rsquo;t hotkeys, what I need is parameters. So, I Extreme Makeover&amp;rsquo;d my AI.Core.Model type alias from this:&lt;/p&gt;
+
+&lt;div class="brush: elm"&gt;
+ &lt;table class="sourcetable"&gt;
+  &lt;tbody&gt;
+   &lt;tr&gt;
+    &lt;td class="linenos"&gt;
+     &lt;div class="linenodiv"&gt;
+      &lt;pre&gt;1
+2
+3
+4
+5
+6&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;
+    &lt;td class="code"&gt;
+     &lt;div class="source"&gt;
+      &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kr"&gt;type&lt;/span&gt; &lt;span class="kr"&gt;alias&lt;/span&gt; &lt;span class="kt"&gt;Model&lt;/span&gt; &lt;span class="nf"&gt;=&lt;/span&gt;
+      &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nv"&gt;wins&lt;/span&gt; &lt;span class="nf"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Int&lt;/span&gt;
+      &lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;losses&lt;/span&gt; &lt;span class="nf"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Int&lt;/span&gt;
+      &lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;points&lt;/span&gt; &lt;span class="nf"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Int&lt;/span&gt;
+      &lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;gameModel&lt;/span&gt; &lt;span class="nf"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Game&lt;/span&gt;&lt;span class="nf"&gt;.&lt;/span&gt;&lt;span class="kt"&gt;Core&lt;/span&gt;&lt;span class="nf"&gt;.&lt;/span&gt;&lt;span class="kt"&gt;Model&lt;/span&gt;
+      &lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;playing&lt;/span&gt; &lt;span class="nf"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Bool&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;to this:&lt;/p&gt;
+
+&lt;div class="brush: elm"&gt;
+ &lt;table class="sourcetable"&gt;
+  &lt;tbody&gt;
+   &lt;tr&gt;
+    &lt;td class="linenos"&gt;
+     &lt;div class="linenodiv"&gt;
+      &lt;pre&gt;1
+2
+3
+4
+5
+6
+7&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;
+    &lt;td class="code"&gt;
+     &lt;div class="source"&gt;
+      &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kr"&gt;type&lt;/span&gt; &lt;span class="kr"&gt;alias&lt;/span&gt; &lt;span class="kt"&gt;Model&lt;/span&gt; &lt;span class="nf"&gt;=&lt;/span&gt;
+    &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nv"&gt;wins&lt;/span&gt; &lt;span class="nf"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Int&lt;/span&gt;
+    &lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;losses&lt;/span&gt; &lt;span class="nf"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Int&lt;/span&gt;
+    &lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;points&lt;/span&gt; &lt;span class="nf"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Int&lt;/span&gt;
+    &lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;gameModel&lt;/span&gt; &lt;span class="nf"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Game&lt;/span&gt;&lt;span class="nf"&gt;.&lt;/span&gt;&lt;span class="kt"&gt;Core&lt;/span&gt;&lt;span class="nf"&gt;.&lt;/span&gt;&lt;span class="kt"&gt;Model&lt;/span&gt;
+    &lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;playing&lt;/span&gt; &lt;span class="nf"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Bool&lt;/span&gt;
+    &lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;play&lt;/span&gt; &lt;span class="nf"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Board&lt;/span&gt; &lt;span class="nf"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;Game&lt;/span&gt;&lt;span class="nf"&gt;.&lt;/span&gt;&lt;span class="kt"&gt;Core&lt;/span&gt;&lt;span class="nf"&gt;.&lt;/span&gt;&lt;span class="kt"&gt;Model&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;Cmd&lt;/span&gt; &lt;span class="kt"&gt;Game&lt;/span&gt;&lt;span class="nf"&gt;.&lt;/span&gt;&lt;span class="kt"&gt;Core&lt;/span&gt;&lt;span class="nf"&gt;.&lt;/span&gt;&lt;span class="kt"&gt;Msg&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Of course, I had to make an change in the update function to call the new &lt;code&gt;model.play&lt;/code&gt;, but it was a pretty minor change for pretty reasonable gain. If you are interested in seeing the diff, &lt;a href="https://github.com/natec425/voltorb-flip/commit/ad4feebf87f694aeef5806876c2b953293c5d881"&gt;here it is&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This will change next week, but it is good enough for the random AI. The reason why it is sufficient for the random AI but (kinda) insufficient for the learning AI has to do with Elm&amp;rsquo;s purity and managed effects. My random ai&amp;rsquo;s play function can use the provided Random effect manager to create a Cmd that generates a random Game.Core.Expose Msg. All of the impurity is handled very neatly in the Random effects manager, my AI doesn&amp;rsquo;t need to own any of it. The important thing to remember is the state still exists; it is just hidden inside the Random effect manager.&lt;/p&gt;
+
+&lt;p&gt;A knee-jerk strategy could be to implement some sort of Learn effect manager. This just feels like a bad idea to me. I&amp;rsquo;m honestly not even going to entertain it for long. I feel like the problem is the AI.Core.Model not being sufficiently general. I was able to get by this week thanks to Random having such an easy out with prepackaged managed state, but next week I have a more specialized type of state that should probably be handled inside the AI&amp;rsquo;s Model somehow. I have an idea of how I will do it, but for now, on to using the multiple AIs.&lt;/p&gt;
+
+&lt;h3 id="multiple-independent-ais"&gt;Multiple Independent AIs&lt;/h3&gt;
+
+&lt;p&gt;So the next step is smashing all of your AIs into one Model and dispatching updates appropriately! Sounds simple enough.&lt;/p&gt;
+
+&lt;div class="brush: elm"&gt;
+ &lt;table class="sourcetable"&gt;
+  &lt;tbody&gt;
+   &lt;tr&gt;
+    &lt;td class="linenos"&gt;
+     &lt;div class="linenodiv"&gt;
+      &lt;pre&gt;1
+2
+3
+4&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;
+    &lt;td class="code"&gt;
+     &lt;div class="source"&gt;
+      &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kr"&gt;type&lt;/span&gt; &lt;span class="kr"&gt;alias&lt;/span&gt; &lt;span class="kt"&gt;Model&lt;/span&gt; &lt;span class="nf"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;Array&lt;/span&gt; &lt;span class="kt"&gt;AI&lt;/span&gt;&lt;span class="nf"&gt;.&lt;/span&gt;&lt;span class="kt"&gt;Core&lt;/span&gt;&lt;span class="nf"&gt;.&lt;/span&gt;&lt;span class="kt"&gt;Model&lt;/span&gt;
+
+&lt;span class="kr"&gt;type&lt;/span&gt; &lt;span class="kt"&gt;Msg&lt;/span&gt;
+    &lt;span class="nf"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;Msg&lt;/span&gt; &lt;span class="kt"&gt;Int&lt;/span&gt; &lt;span class="kt"&gt;AI&lt;/span&gt;&lt;span class="nf"&gt;.&lt;/span&gt;&lt;span class="kt"&gt;Core&lt;/span&gt;&lt;span class="nf"&gt;.&lt;/span&gt;&lt;span class="kt"&gt;Msg&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now, inside the update function, each message comes with an Int telling me which AI the AI.Core.Msg is for. Surprisingly easy.&lt;/p&gt;
+
+&lt;div id="voltorb-flip"&gt;&lt;/div&gt;
+
+&lt;script src="/js/voltorb-flip-multiai.js"&gt;&lt;/script&gt;
+
+&lt;script&gt;
+    var node = document.getElementById('voltorb-flip');
+    var app = Elm.MultiAI.embed(node);&lt;/script&gt;
+
+&lt;p&gt;&lt;/p&gt;&lt;/html&gt;</description></item>
   <item>
    <title>Short Post: Voltorb Flip AI</title>
    <link>http://www.example.com/blog/2016/09/09/short-post-voltorb-flip-ai/?utm_source=Functional-Programming&amp;utm_medium=RSS</link>

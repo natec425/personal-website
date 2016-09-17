@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <title>AI Reuse pt 1</title>
+    <meta name="description" content="I thought a list of independently playing Voltorb Flip AIs would be pretty neat. So, I did it. Right now, it is my original &quot;expectation&quot; based AI alongside a random AI. I wanted to add a simple learning AI this week, but I started too late. However, I di...">
+    <meta name="author"      content="Nate Clark">
+    <meta name="keywords"    content="Functional Programming, Elm, Pokemon, AI">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <link rel="icon"      href="/favicon.ico">
+    <link rel="canonical" href="http://www.example.com/blog/2016/09/16/ai-reuse-pt-1/">
+    <link rel="next" href="/blog/2016/09/09/short-post-voltorb-flip-ai/">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/pygments.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <!-- Feeds -->
+    <link rel="alternate" type="application/atom+xml"
+          href="/feeds/all.atom.xml" title="Atom Feed">
+    <link rel="alternate" type="application/rss+xml"
+          href="/feeds/all.rss.xml" title="RSS Feed">
+    <!-- JS -->
+    <script type="text/javascript">
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-xxxxx', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+    <!-- A standard Twitter Bootstrap nav bar -->
+    <nav class="navbar navbar-default"
+            role="banner">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button"
+                  class="navbar-toggle"
+                  data-toggle="collapse"
+                  data-target=".our-nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="/index.html" class="navbar-brand">Nate Clark</a>
+        </div>
+        <div class="collapse navbar-collapse our-nav-collapse"
+             role="navigation">
+          <ul class="nav navbar-nav">
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Tags <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/index.html">All Posts</a></li>
+
+<li><a href="/tags/AI.html">AI</a></li>
+
+<li><a href="/tags/Elm.html">Elm</a></li>
+
+<li><a href="/tags/Functional-Programming.html">Functional Programming</a></li>
+
+<li><a href="/tags/Hello.html">Hello</a></li>
+
+<li><a href="/tags/Pokemon.html">Pokemon</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/About.html">About</a>
+            </li> 
+            <li><a href="/feeds/all.atom.xml">Atom</a></li>
+            <li><a href="/feeds/all.rss.xml">RSS</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row">
+
+        <!-- Main column -->
+        <div id="content" class="col-md-12">
+
+
+
+
+
+          <article>
+  <header>
+    <h1>AI Reuse pt 1</h1>
+    <p class='date-and-tags'>
+<time datetime="2016-09-16" pubdate="true">2016-09-16</time> :: <span class="tags"><a href="/tags/Functional-Programming.html">Functional Programming</a>, <a href="/tags/Elm.html">Elm</a>, <a href="/tags/Pokemon.html">Pokemon</a>, <a href="/tags/AI.html">AI</a></span></p>
+  </header>
+
+<p>I thought a list of independently playing Voltorb Flip AIs would be pretty neat. So, I did it. Right now, it is my original &ldquo;expectation&rdquo; based AI alongside a random AI. I wanted to add a simple learning AI this week, but I started too late. However, I did learn to appreciate some important differences and similarities in the nature of the random AI and the (soon to be) learning AI.</p>
+<!-- more-->
+
+<h3 id="plugging-in-a-new-brain">Plugging In A New Brain</h3>
+
+<p>Of course, I refuse to copy/paste/edit my original AI to produce a new one. What I need isn&rsquo;t hotkeys, what I need is parameters. So, I Extreme Makeover&rsquo;d my AI.Core.Model type alias from this:</p>
+
+<div class="brush: elm">
+ <table class="sourcetable">
+  <tbody>
+   <tr>
+    <td class="linenos">
+     <div class="linenodiv">
+      <pre>1
+2
+3
+4
+5
+6</pre></div></td>
+    <td class="code">
+     <div class="source">
+      <pre><span></span><span class="kr">type</span> <span class="kr">alias</span> <span class="kt">Model</span> <span class="nf">=</span>
+      <span class="p">{</span> <span class="nv">wins</span> <span class="nf">:</span> <span class="kt">Int</span>
+      <span class="p">,</span> <span class="nv">losses</span> <span class="nf">:</span> <span class="kt">Int</span>
+      <span class="p">,</span> <span class="nv">points</span> <span class="nf">:</span> <span class="kt">Int</span>
+      <span class="p">,</span> <span class="nv">gameModel</span> <span class="nf">:</span> <span class="kt">Game</span><span class="nf">.</span><span class="kt">Core</span><span class="nf">.</span><span class="kt">Model</span>
+      <span class="p">,</span> <span class="nv">playing</span> <span class="nf">:</span> <span class="kt">Bool</span> <span class="p">}</span>
+</pre></div>
+</td></tr></tbody></table>
+</div>
+
+<p>to this:</p>
+
+<div class="brush: elm">
+ <table class="sourcetable">
+  <tbody>
+   <tr>
+    <td class="linenos">
+     <div class="linenodiv">
+      <pre>1
+2
+3
+4
+5
+6
+7</pre></div></td>
+    <td class="code">
+     <div class="source">
+      <pre><span></span><span class="kr">type</span> <span class="kr">alias</span> <span class="kt">Model</span> <span class="nf">=</span>
+    <span class="p">{</span> <span class="nv">wins</span> <span class="nf">:</span> <span class="kt">Int</span>
+    <span class="p">,</span> <span class="nv">losses</span> <span class="nf">:</span> <span class="kt">Int</span>
+    <span class="p">,</span> <span class="nv">points</span> <span class="nf">:</span> <span class="kt">Int</span>
+    <span class="p">,</span> <span class="nv">gameModel</span> <span class="nf">:</span> <span class="kt">Game</span><span class="nf">.</span><span class="kt">Core</span><span class="nf">.</span><span class="kt">Model</span>
+    <span class="p">,</span> <span class="nv">playing</span> <span class="nf">:</span> <span class="kt">Bool</span>
+    <span class="p">,</span> <span class="nv">play</span> <span class="nf">:</span> <span class="kt">Board</span> <span class="nf">-&gt;</span> <span class="p">(</span><span class="kt">Game</span><span class="nf">.</span><span class="kt">Core</span><span class="nf">.</span><span class="kt">Model</span><span class="p">,</span> <span class="kt">Cmd</span> <span class="kt">Game</span><span class="nf">.</span><span class="kt">Core</span><span class="nf">.</span><span class="kt">Msg</span><span class="p">)</span> <span class="p">}</span>
+</pre></div>
+</td></tr></tbody></table>
+</div>
+
+<p>Of course, I had to make an change in the update function to call the new <code>model.play</code>, but it was a pretty minor change for pretty reasonable gain. If you are interested in seeing the diff, <a href="https://github.com/natec425/voltorb-flip/commit/ad4feebf87f694aeef5806876c2b953293c5d881">here it is</a>.</p>
+
+<p>This will change next week, but it is good enough for the random AI. The reason why it is sufficient for the random AI but (kinda) insufficient for the learning AI has to do with Elm&rsquo;s purity and managed effects. My random ai&rsquo;s play function can use the provided Random effect manager to create a Cmd that generates a random Game.Core.Expose Msg. All of the impurity is handled very neatly in the Random effects manager, my AI doesn&rsquo;t need to own any of it. The important thing to remember is the state still exists; it is just hidden inside the Random effect manager.</p>
+
+<p>A knee-jerk strategy could be to implement some sort of Learn effect manager. This just feels like a bad idea to me. I&rsquo;m honestly not even going to entertain it for long. I feel like the problem is the AI.Core.Model not being sufficiently general. I was able to get by this week thanks to Random having such an easy out with prepackaged managed state, but next week I have a more specialized type of state that should probably be handled inside the AI&rsquo;s Model somehow. I have an idea of how I will do it, but for now, on to using the multiple AIs.</p>
+
+<h3 id="multiple-independent-ais">Multiple Independent AIs</h3>
+
+<p>So the next step is smashing all of your AIs into one Model and dispatching updates appropriately! Sounds simple enough.</p>
+
+<div class="brush: elm">
+ <table class="sourcetable">
+  <tbody>
+   <tr>
+    <td class="linenos">
+     <div class="linenodiv">
+      <pre>1
+2
+3
+4</pre></div></td>
+    <td class="code">
+     <div class="source">
+      <pre><span></span><span class="kr">type</span> <span class="kr">alias</span> <span class="kt">Model</span> <span class="nf">=</span> <span class="kt">Array</span> <span class="kt">AI</span><span class="nf">.</span><span class="kt">Core</span><span class="nf">.</span><span class="kt">Model</span>
+
+<span class="kr">type</span> <span class="kt">Msg</span>
+    <span class="nf">=</span> <span class="kt">Msg</span> <span class="kt">Int</span> <span class="kt">AI</span><span class="nf">.</span><span class="kt">Core</span><span class="nf">.</span><span class="kt">Msg</span>
+</pre></div>
+</td></tr></tbody></table>
+</div>
+
+<p>Now, inside the update function, each message comes with an Int telling me which AI the AI.Core.Msg is for. Surprisingly easy.</p>
+
+<div id="voltorb-flip"></div>
+
+<script src="/js/voltorb-flip-multiai.js"></script>
+
+<script>
+    var node = document.getElementById('voltorb-flip');
+    var app = Elm.MultiAI.embed(node);</script>
+
+<p></p>
+  <footer>
+    <script type="text/javascript">
+      !function(d,s,id){
+          var js,fjs=d.getElementsByTagName(s)[0];
+          if(!d.getElementById(id)){
+              js=d.createElement(s);
+              js.id=id;
+              js.src="//platform.twitter.com/widgets.js";
+              fjs.parentNode.insertBefore(js,fjs);
+          }
+      }(document,"script","twitter-wjs");
+    </script>
+    <a href="https://twitter.com/share"
+       class="twitter-share-button"
+       data-url="http://www.example.com/blog/2016/09/16/ai-reuse-pt-1/"
+       data-dnt="true">
+      "Tweet"</a>
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+    <g:plusone size="medium" href="http://www.example.com/blog/2016/09/16/ai-reuse-pt-1/"></g:plusone>
+    <script type="text/javascript">
+      var disqus_shortname = 'shortname';
+      (function() {
+          var dsq = document.createElement('script');
+          dsq.type = 'text/javascript';
+          dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <div id="disqus_thread"></div>
+    <ul class="pager">
+
+    <li class="next">
+      <a href="/blog/2016/09/09/short-post-voltorb-flip-ai/"><em>Short Post: Voltorb Flip AI</em> &rarr;</a>
+    </li>
+    </ul>
+  </footer>
+</article>
+        </div>
+      </div>
+      <footer>
+        <hr />
+        <p>Edited with <a href="https://code.visualstudio.com/">Visual Studio Code</a></p>
+        <p>Generated by <a href="https://github.com/greghendershott/frog">Frog</a>, the <strong>fr</strong>ozen bl<strong>og</strong> tool.</p>
+        <p>Styled with <a href="http://twitter.github.com/bootstrap/index.html">Bootstrap</a> and <a href="https://bootswatch.com/darkly/">Darkly</a>.</p>
+      </footer>
+    </div>
+    <!-- </body> JS -->
+    <script type="text/javascript" src="//code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  </body>
+</html>
