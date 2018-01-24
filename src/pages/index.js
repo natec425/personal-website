@@ -69,8 +69,10 @@ const AtMsu = () => (
         <Td>
             In college I caught functional programming fever. It started out as
             googling "functional programming in Python" every few days, but
-            eventually I grew into using proper functional programming languages
-            like Scala, Racket, and Haskell.
+            eventually I grew into using functional programming languages like{' '}
+            <a href="http://www.scala-lang.org/">Scala</a>,{' '}
+            <a href="https://racket-lang.org/">Racket</a>, and{' '}
+            <a href="https://www.haskell.org/">Haskell</a>.
         </Td>
         <Td>
             As an undergrad I noticed that the introductory programming labs
