@@ -61,38 +61,44 @@ const Td = props => (
     </td>
 );
 
+const AtMsu = () => (
+    <tr>
+        <td>
+            <img style={{ minWidth: 100 }} src={msu_img} />
+        </td>
+        <Td>
+            In college I caught functional programming fever. It started out as
+            googling "functional programming in Python" every few days, but
+            eventually I grew into using proper functional programming languages
+            like Scala, Racket, and Haskell.
+        </Td>
+        <Td>
+            As an undergrad I noticed that the introductory programming labs
+            were understaffed, so I volunteered to help out. Eventually I ended
+            up with a teaching assistantship where I tried to contribute my
+            voice to the design of the introductory curriculum at MSU.
+        </Td>
+    </tr>
+);
+
+const WhatIveBeenDoingHeaders = () => (
+    <tr>
+        <td />
+        <td>
+            <h3>As a Software Developer...</h3>
+        </td>
+        <td>
+            <h3>As an Educator...</h3>
+        </td>
+    </tr>
+);
+
 const WhatIveBeenDoing = () => (
     <div>
         <h2>What I've been doing</h2>
         <table>
-            <tr>
-                <td />
-                <td>
-                    <h3>As a Software Developer...</h3>
-                </td>
-                <td>
-                    <h3>As an Educator...</h3>
-                </td>
-            </tr>
-
-            <tr>
-                <td>
-                    <img style={{ minWidth: 100 }} src={msu_img} />
-                </td>
-                <Td>
-                    In college I caught functional programming fever. It started
-                    out as googling "functional programming in Python" every few
-                    days, but eventually I grew into using proper functional
-                    programming languages like Scala, Racket, and Haskell.
-                </Td>
-                <Td>
-                    As an undergrad I noticed that the introductory programming
-                    labs were understaffed, so I volunteered to help out.
-                    Eventually I ended up with a teaching assistantship where I
-                    tried to contribute my voice to the design of the
-                    introductory curriculum at MSU.
-                </Td>
-            </tr>
+            <WhatIveBeenDoingHeaders />
+            <AtMsu />
         </table>
     </div>
 );
