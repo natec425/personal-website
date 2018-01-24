@@ -1,28 +1,18 @@
 import React from 'react';
 import Link from 'gatsby-link';
+import me_img from '../../../public/static/images/me.jpg';
 
 const Header = () => (
     <div
         style={{
             background: '#dddddd',
             marginBottom: '1.45rem',
-            paddingLeft: '5%',
+            paddingLeft: '15%',
             paddingRight: '5%',
-            paddingBottom: 5
+            paddingBottom: 5,
+            paddingTop: 15
         }}
     >
-        <img
-            style={{
-                margin: 0,
-                marginTop: 10,
-                marginLeft: 15,
-                marginRight: 0,
-                borderRadius: '50%',
-                height: 100,
-                display: 'inline'
-            }}
-            src="/static/images/me.jpg"
-        />
         <div
             style={{
                 margin: '0 auto',
