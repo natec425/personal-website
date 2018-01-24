@@ -6,6 +6,8 @@ const Header = () => (
         style={{
             background: '#dddddd',
             marginBottom: '1.45rem',
+            paddingLeft: '5%',
+            paddingRight: '5%',
             paddingBottom: 5
         }}
     >
