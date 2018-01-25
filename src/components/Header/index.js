@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'gatsby-link';
-import me_img from '../../../public/static/images/me.jpg';
+import me_img from '../../../images/me.jpg';
 
 const Header = () => (
     <div

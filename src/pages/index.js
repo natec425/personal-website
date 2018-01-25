@@ -1,10 +1,10 @@
 import React from 'react';
 import Link from 'gatsby-link';
-import msu_img from '../../public/static/images/msu.png';
-import bcca_img from '../../public/static/images/bcca.png';
-import me_img from '../../public/static/images/me.jpg';
-import fnc_img from '../../public/static/images/fnc.png';
-import myra_img from '../../public/static/images/myra.png';
+import msu_img from '../../images/msu.png';
+import bcca_img from '../../images/bcca.png';
+import me_img from '../../images/me.jpg';
+import fnc_img from '../../images/fnc.png';
+import myra_img from '../../images/myra.png';
 
 const AboutBaseCamp = () => (
     <div style={{ display: 'flex' }}>
