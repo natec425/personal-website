@@ -9,16 +9,18 @@ import myra_img from '../../public/static/images/myra.png';
 const AboutBaseCamp = () => (
     <div style={{ display: 'flex' }}>
         <div>
-            <img
-                style={{
-                    width: 72,
-                    height: 82,
-                    marginLeft: 20,
-                    marginRight: 20
-                }}
-                src={bcca_img}
-                alt="Base Camp Coding Academy Logo"
-            />
+            <a href="https://basecampcodingacademy.org/">
+                <img
+                    style={{
+                        width: 72,
+                        height: 82,
+                        marginLeft: 20,
+                        marginRight: 20
+                    }}
+                    src={bcca_img}
+                    alt="Base Camp Coding Academy Logo"
+                />
+            </a>
         </div>
         <div style={{ flex: 1 }}>
             <p>
@@ -68,11 +70,13 @@ const Td = props => (
 const AtMsu = () => (
     <tr>
         <td>
-            <img
-                style={{ minWidth: 100 }}
-                src={msu_img}
-                alt="Mississippi State University Logo"
-            />
+            <a href="http://cse.msstate.edu/">
+                <img
+                    style={{ minWidth: 100 }}
+                    src={msu_img}
+                    alt="Mississippi State University Logo"
+                />
+            </a>
         </td>
         <Td>
             In college I caught functional programming fever. It started out as
@@ -95,7 +99,9 @@ const AtMsu = () => (
 const AtFnc = () => (
     <tr>
         <td>
-            <img src={fnc_img} style={{ minWidth: 100 }} alt="FNC logo" />
+            <a href="http://www.fncinc.com/">
+                <img src={fnc_img} style={{ minWidth: 100 }} alt="FNC logo" />
+            </a>
         </td>
         <Td>
             I briefly worked at a financial technology company called FNC. I
@@ -124,11 +130,13 @@ const AtFnc = () => (
 const AtMyra = () => (
     <tr>
         <td>
-            <img
-                src={myra_img}
-                style={{ minWidth: 100 }}
-                alt="Myra Mirrors Logo"
-            />
+            <a href="http://myramirrors.com/">
+                <img
+                    src={myra_img}
+                    style={{ minWidth: 100 }}
+                    alt="Myra Mirrors Logo"
+                />
+            </a>
         </td>
         <Td>
             At Myra Mirrors I am responsible for{' '}
