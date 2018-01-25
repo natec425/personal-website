@@ -3,6 +3,8 @@ import Link from 'gatsby-link';
 import msu_img from '../../public/static/images/msu.png';
 import bcca_img from '../../public/static/images/bcca.png';
 import me_img from '../../public/static/images/me.jpg';
+import fnc_img from '../../public/static/images/fnc.png';
+import myra_img from '../../public/static/images/myra.png';
 
 const AboutBaseCamp = () => (
     <div style={{ display: 'flex' }}>
@@ -78,7 +80,60 @@ const AtMsu = () => (
             As an undergrad I noticed that the introductory programming labs
             were understaffed, so I volunteered to help out. Eventually I ended
             up with a teaching assistantship where I tried to contribute my
-            voice to the design of the introductory curriculum at MSU.
+            voice to the design of the introductory computer science curriculum
+            at MSU.
+        </Td>
+    </tr>
+);
+
+const AtFnc = () => (
+    <tr>
+        <td>
+            <img src={fnc_img} style={{ minWidth: 100 }} />
+        </td>
+        <Td>
+            I briefly worked at a financial technology company called FNC. I
+            worked on a team that built infrastructure services in{' '}
+            <a href="https://en.wikipedia.org/wiki/C_Sharp_%28programming_language%29">
+                C#
+            </a>{' '}
+            with <a href="https://www.asp.net/">ASP.Net</a>. When I could get
+            away with it, I would try any to write any tools or tests I needed
+            in <a href="http://fsharp.org/">F#</a>. One of my favorites was a
+            hackathon project where I implemented a small domain specific
+            language for a rules engine in F#.
+        </Td>
+        <Td>
+            Management at FNC was very supportive and allowed me to teach some
+            internal courses on functional programming in F#. I also led a small
+            book club that starting working through{' '}
+            <a href="https://www.amazon.com/Functional-Programming-Scala-Paul-Chiusano/dp/1617290653">
+                Functional Programming in Scala
+            </a>. We didn't finish the book before I left the company, but it
+            was a fun group.
+        </Td>
+    </tr>
+);
+
+const AtMyra = () => (
+    <tr>
+        <td>
+            <img src={myra_img} style={{ minWidth: 100 }} />
+        </td>
+        <Td>
+            At Myra Mirrors I am responsible for{' '}
+            <a href="https://facebook.github.io/react-native/">React Native</a>{' '}
+            development on the company's mobile companion application and{' '}
+            <a href="https://www.python.org/">Python</a> development on the
+            smart mirror itself. I also helped prepare and demonstrate our
+            product at <a href="https://www.ces.tech">CES</a> this year.
+        </Td>
+        <Td>
+            I don't have any explicit responsibilities or opportunities as an
+            educator at Myra, but I try to bring my experience as a teacher to
+            the table when interacting with colleagues. Good coworkers learn
+            from each other as they work together, so I try to be mindful of
+            learning from the people around me.
         </Td>
     </tr>
 );
@@ -101,6 +156,8 @@ const WhatIveBeenDoing = () => (
         <table>
             <WhatIveBeenDoingHeaders />
             <AtMsu />
+            <AtFnc />
+            <AtMyra />
         </table>
     </div>
 );
