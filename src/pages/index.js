@@ -139,7 +139,7 @@ const AtMyra = () => (
             </a>
         </td>
         <Td>
-            At Myra Mirrors I am responsible for{' '}
+            At Myra Mirrors I was responsible for{' '}
             <a href="https://facebook.github.io/react-native/">React Native</a>{' '}
             development on the company's mobile companion application and{' '}
             <a href="https://www.python.org/">Python</a> development on the
@@ -147,10 +147,10 @@ const AtMyra = () => (
             product at <a href="https://www.ces.tech">CES</a> this year.
         </Td>
         <Td>
-            I don't have any explicit responsibilities or opportunities as an
-            educator at Myra, but I try to bring my experience as a teacher to
+            I didn't have any explicit responsibilities or opportunities as an
+            educator at Myra, but I tried to bring my experience as a teacher to
             the table when interacting with colleagues. Good coworkers learn
-            from each other as they work together, so I try to be mindful of
+            from each other as they work together; so I tried to be mindful of
             learning from the people around me.
         </Td>
     </tr>
