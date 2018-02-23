@@ -172,10 +172,12 @@ const WhatIveBeenDoing = () => (
     <div>
         <h2>What I've been doing</h2>
         <table>
-            <WhatIveBeenDoingHeaders />
-            <AtMsu />
-            <AtFnc />
-            <AtMyra />
+            <tbody>
+                <WhatIveBeenDoingHeaders />
+                <AtMsu />
+                <AtFnc />
+                <AtMyra />
+            </tbody>
         </table>
     </div>
 );
