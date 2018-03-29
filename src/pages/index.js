@@ -182,11 +182,30 @@ const WhatIveBeenDoing = () => (
     </div>
 );
 
+const Contact = () => (
+    <div>
+        <h2>How to get in touch</h2>
+        <p>
+            If you would like to get in touch, it is probably best to contact me
+            by email (<a href="mailto:natec425@gmail.com">natec425@gmail.com</a>).
+            I try to respond to emails fairly quickly, and if you're local I'm
+            always happy to meet up for a cup of coffee.
+        </p>
+
+        <p>
+            Other than email, my github account is{' '}
+            <a href="https://github.com/natec425">natec425</a> if you want to
+            look around.
+        </p>
+    </div>
+);
+
 const IndexPage = () => (
     <div>
         <h1>Hello World!</h1>
         <AboutBaseCamp />
         <WhatIveBeenDoing />
+        <Contact />
     </div>
 );
 
