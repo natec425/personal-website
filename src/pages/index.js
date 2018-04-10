@@ -6,9 +6,14 @@ import me_img from '../../images/me.jpg';
 import fnc_img from '../../images/fnc.png';
 import myra_img from '../../images/myra.png';
 
+const WIDTH = window.innerWidth || document.body.clientWidth;
+const IS_SMALL = WIDTH < 750;
+
+const HideIfSmall = props => (IS_SMALL ? null : props.children);
+
 const AboutBaseCamp = () => (
     <div style={{ display: 'flex' }}>
-        <div>
+        <HideIfSmall>
             <a href="https://basecampcodingacademy.org/">
                 <img
                     style={{
@@ -21,7 +26,7 @@ const AboutBaseCamp = () => (
                     alt="Base Camp Coding Academy Logo"
                 />
             </a>
-        </div>
+        </HideIfSmall>
         <div style={{ flex: 1 }}>
             <p>
                 I'm Technical Director at{' '}
@@ -41,43 +46,51 @@ const AboutBaseCamp = () => (
                 about our first year.
             </p>
         </div>
-        <img
-            style={{
-                borderRadius: '50%',
-                height: 100,
-                float: 'right'
-            }}
-            src={me_img}
-            alt="Picture of Nate Clark"
-        />
+        <HideIfSmall>
+            <img
+                style={{
+                    borderRadius: '50%',
+                    height: 100,
+                    float: 'right'
+                }}
+                src={me_img}
+                alt="Picture of Nate Clark"
+            />
+        </HideIfSmall>
     </div>
 );
 
+const TdStyles = IS_SMALL
+    ? {
+          verticalAlign: 'top',
+          paddingBottom: 20
+      }
+    : {
+          verticalAlign: 'top',
+          paddingTop: 30,
+          paddingRight: 50,
+          paddingBottom: 50
+      };
+
 const Td = props => (
-    <td
-        style={{
-            verticalAlign: 'top',
-            paddingTop: 30,
-            paddingRight: 50,
-            paddingBottom: 50
-        }}
-        {...props}
-    >
+    <td style={TdStyles} {...props}>
         {props.children}
     </td>
 );
 
 const AtMsu = () => (
     <tr>
-        <td>
-            <a href="http://cse.msstate.edu/">
-                <img
-                    style={{ minWidth: 100 }}
-                    src={msu_img}
-                    alt="Mississippi State University Logo"
-                />
-            </a>
-        </td>
+        <HideIfSmall>
+            <td>
+                <a href="http://cse.msstate.edu/">
+                    <img
+                        style={{ minWidth: 100 }}
+                        src={msu_img}
+                        alt="Mississippi State University Logo"
+                    />
+                </a>
+            </td>
+        </HideIfSmall>
         <Td>
             In college I caught functional programming fever. It started out as
             googling "functional programming in Python" every few days, but
@@ -98,11 +111,17 @@ const AtMsu = () => (
 
 const AtFnc = () => (
     <tr>
-        <td>
-            <a href="http://www.fncinc.com/">
-                <img src={fnc_img} style={{ minWidth: 100 }} alt="FNC logo" />
-            </a>
-        </td>
+        <HideIfSmall>
+            <td>
+                <a href="http://www.fncinc.com/">
+                    <img
+                        src={fnc_img}
+                        style={{ minWidth: 100 }}
+                        alt="FNC logo"
+                    />
+                </a>
+            </td>
+        </HideIfSmall>
         <Td>
             I briefly worked at a financial technology company called FNC. I
             worked on a team that built infrastructure services in{' '}
@@ -129,15 +148,17 @@ const AtFnc = () => (
 
 const AtMyra = () => (
     <tr>
-        <td>
-            <a href="http://myramirrors.com/">
-                <img
-                    src={myra_img}
-                    style={{ minWidth: 100 }}
-                    alt="Myra Mirrors Logo"
-                />
-            </a>
-        </td>
+        <HideIfSmall>
+            <td>
+                <a href="http://myramirrors.com/">
+                    <img
+                        src={myra_img}
+                        style={{ minWidth: 100 }}
+                        alt="Myra Mirrors Logo"
+                    />
+                </a>
+            </td>
+        </HideIfSmall>
         <Td>
             At Myra Mirrors I was responsible for{' '}
             <a href="https://facebook.github.io/react-native/">React Native</a>{' '}
@@ -158,7 +179,9 @@ const AtMyra = () => (
 
 const WhatIveBeenDoingHeaders = () => (
     <tr>
-        <td />
+        <HideIfSmall>
+            <td />
+        </HideIfSmall>
         <td>
             <h3>As a Software Developer...</h3>
         </td>
