@@ -5,28 +5,22 @@ import bcca_img from '../../images/bcca.png';
 import me_img from '../../images/me.jpg';
 import fnc_img from '../../images/fnc.png';
 import myra_img from '../../images/myra.png';
-
-const WIDTH = window.innerWidth || document.body.clientWidth;
-const IS_SMALL = WIDTH < 750;
-
-const HideIfSmall = props => (IS_SMALL ? null : props.children);
+import './index.css';
 
 const AboutBaseCamp = () => (
     <div style={{ display: 'flex' }}>
-        <HideIfSmall>
-            <a href="https://basecampcodingacademy.org/">
-                <img
-                    style={{
-                        width: 72,
-                        height: 82,
-                        marginLeft: 20,
-                        marginRight: 20
-                    }}
-                    src={bcca_img}
-                    alt="Base Camp Coding Academy Logo"
-                />
-            </a>
-        </HideIfSmall>
+        <a className="hide-on-small" href="https://basecampcodingacademy.org/">
+            <img
+                style={{
+                    width: 72,
+                    height: 82,
+                    marginLeft: 20,
+                    marginRight: 20
+                }}
+                src={bcca_img}
+                alt="Base Camp Coding Academy Logo"
+            />
+        </a>
         <div style={{ flex: 1 }}>
             <p>
                 I'm Technical Director at{' '}
@@ -46,51 +40,36 @@ const AboutBaseCamp = () => (
                 about our first year.
             </p>
         </div>
-        <HideIfSmall>
-            <img
-                style={{
-                    borderRadius: '50%',
-                    height: 100,
-                    float: 'right'
-                }}
-                src={me_img}
-                alt="Picture of Nate Clark"
-            />
-        </HideIfSmall>
+        <img
+            className="hide-on-small"
+            style={{
+                borderRadius: '50%',
+                height: 100,
+                float: 'right'
+            }}
+            src={me_img}
+            alt="Picture of Nate Clark"
+        />
     </div>
 );
 
-const TdStyles = IS_SMALL
-    ? {
-          verticalAlign: 'top',
-          paddingBottom: 20
-      }
-    : {
-          verticalAlign: 'top',
-          paddingTop: 30,
-          paddingRight: 50,
-          paddingBottom: 50
-      };
-
 const Td = props => (
-    <td style={TdStyles} {...props}>
+    <td className="what-ive-been-doing-td" {...props}>
         {props.children}
     </td>
 );
 
 const AtMsu = () => (
     <tr>
-        <HideIfSmall>
-            <td>
-                <a href="http://cse.msstate.edu/">
-                    <img
-                        style={{ minWidth: 100 }}
-                        src={msu_img}
-                        alt="Mississippi State University Logo"
-                    />
-                </a>
-            </td>
-        </HideIfSmall>
+        <td className="hide-on-small">
+            <a href="http://cse.msstate.edu/">
+                <img
+                    style={{ minWidth: 100 }}
+                    src={msu_img}
+                    alt="Mississippi State University Logo"
+                />
+            </a>
+        </td>
         <Td>
             In college I caught functional programming fever. It started out as
             googling "functional programming in Python" every few days, but
@@ -111,17 +90,11 @@ const AtMsu = () => (
 
 const AtFnc = () => (
     <tr>
-        <HideIfSmall>
-            <td>
-                <a href="http://www.fncinc.com/">
-                    <img
-                        src={fnc_img}
-                        style={{ minWidth: 100 }}
-                        alt="FNC logo"
-                    />
-                </a>
-            </td>
-        </HideIfSmall>
+        <td className="hide-on-small">
+            <a href="http://www.fncinc.com/">
+                <img src={fnc_img} style={{ minWidth: 100 }} alt="FNC logo" />
+            </a>
+        </td>
         <Td>
             I briefly worked at a financial technology company called FNC. I
             worked on a team that built infrastructure services in{' '}
@@ -148,17 +121,15 @@ const AtFnc = () => (
 
 const AtMyra = () => (
     <tr>
-        <HideIfSmall>
-            <td>
-                <a href="http://myramirrors.com/">
-                    <img
-                        src={myra_img}
-                        style={{ minWidth: 100 }}
-                        alt="Myra Mirrors Logo"
-                    />
-                </a>
-            </td>
-        </HideIfSmall>
+        <td className="hide-on-small">
+            <a href="http://myramirrors.com/">
+                <img
+                    src={myra_img}
+                    style={{ minWidth: 100 }}
+                    alt="Myra Mirrors Logo"
+                />
+            </a>
+        </td>
         <Td>
             At Myra Mirrors I was responsible for{' '}
             <a href="https://facebook.github.io/react-native/">React Native</a>{' '}
@@ -179,9 +150,7 @@ const AtMyra = () => (
 
 const WhatIveBeenDoingHeaders = () => (
     <tr>
-        <HideIfSmall>
-            <td />
-        </HideIfSmall>
+        <td className="hide-on-small" />
         <td>
             <h3>As a Software Developer...</h3>
         </td>
