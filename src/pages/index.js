@@ -5,11 +5,15 @@ import bcca_img from '../../images/bcca.png';
 import me_img from '../../images/me.jpg';
 import fnc_img from '../../images/fnc.png';
 import myra_img from '../../images/myra.png';
+import './index.css';
 
 const AboutBaseCamp = () => (
     <div style={{ display: 'flex' }}>
         <div>
-            <a href="https://basecampcodingacademy.org/">
+            <a
+                className="hide-on-small"
+                href="https://basecampcodingacademy.org/"
+            >
                 <img
                     style={{
                         width: 72,
@@ -42,6 +46,7 @@ const AboutBaseCamp = () => (
             </p>
         </div>
         <img
+            className="hide-on-small"
             style={{
                 borderRadius: '50%',
                 height: 100,
@@ -54,22 +59,14 @@ const AboutBaseCamp = () => (
 );
 
 const Td = props => (
-    <td
-        style={{
-            verticalAlign: 'top',
-            paddingTop: 30,
-            paddingRight: 50,
-            paddingBottom: 50
-        }}
-        {...props}
-    >
+    <td className="what-ive-been-doing-td" {...props}>
         {props.children}
     </td>
 );
 
 const AtMsu = () => (
     <tr>
-        <td>
+        <td className="hide-on-small">
             <a href="http://cse.msstate.edu/">
                 <img
                     style={{ minWidth: 100 }}
@@ -98,7 +95,7 @@ const AtMsu = () => (
 
 const AtFnc = () => (
     <tr>
-        <td>
+        <td className="hide-on-small">
             <a href="http://www.fncinc.com/">
                 <img src={fnc_img} style={{ minWidth: 100 }} alt="FNC logo" />
             </a>
@@ -129,7 +126,7 @@ const AtFnc = () => (
 
 const AtMyra = () => (
     <tr>
-        <td>
+        <td className="hide-on-small">
             <a href="http://myramirrors.com/">
                 <img
                     src={myra_img}
@@ -158,7 +155,7 @@ const AtMyra = () => (
 
 const WhatIveBeenDoingHeaders = () => (
     <tr>
-        <td />
+        <td className="hide-on-small" />
         <td>
             <h3>As a Software Developer...</h3>
         </td>

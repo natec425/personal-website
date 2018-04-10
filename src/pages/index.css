@@ -1,0 +1,17 @@
+.what-ive-been-doing-td {
+    vertical-align: top;
+}
+
+@media screen and (max-width: 750px) {
+    .hide-on-small {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 750px) {
+    .what-ive-been-doing-td {
+        padding-top: 30px;
+        padding-right: 50px;
+        padding-bottom: 50px;
+    }
+}
