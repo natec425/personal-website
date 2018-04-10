@@ -2,6 +2,9 @@ import React from 'react';
 import Link from 'gatsby-link';
 import me_img from '../../../images/me.jpg';
 
+const WIDTH = window.innerWidth || document.body.clientWidth;
+const IS_SMALL = WIDTH < 750;
+
 const styles = {
     headerContainer: {
         background: '#dddddd',
@@ -14,14 +17,17 @@ const styles = {
     headerMainSection: {
         margin: '0 auto',
         maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
-        display: 'inline'
+        padding: IS_SMALL ? '1.45rem 1.0875rem' : 0
     },
     nameLinkContainer: {
         margin: 0,
         display: 'inline'
     },
-    titleContainer: { margin: 0, paddingLeft: '1.5rem', display: 'inline' }
+    titleContainer: {
+        margin: 0,
+        paddingLeft: '1.5rem',
+        display: IS_SMALL ? 'block' : 'inline'
+    }
 };
 
 const Header = () => (
