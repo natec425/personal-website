@@ -7,7 +7,9 @@ import './index.css';
 
 const TemplateWrapper = ({ children }) => (
     <div>
-        <Helmet title="Nate Clark" />
+        <Helmet title="Nate Clark">
+            <html lang="en" />
+        </Helmet>
         <Header />
         <div
             style={{
@@ -19,7 +21,7 @@ const TemplateWrapper = ({ children }) => (
         >
             {children()}
         </div>
-    </div>
+    </div >
 );
 
 TemplateWrapper.propTypes = {
