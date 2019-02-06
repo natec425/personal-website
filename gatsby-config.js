@@ -1,6 +1,7 @@
 module.exports = {
     siteMetadata: {
-        title: 'Nate Clark'
+        title: 'Nate Clark',
+        siteUrl: 'https://nateclark.io',
     },
     plugins: [
         'gatsby-plugin-react-helmet',
@@ -9,6 +10,7 @@ module.exports = {
             options: {
                 pathToConfigModule: 'src/utils/typography.js'
             }
-        }
+        },
+        'gatsby-plugin-robots-txt',
     ]
 };
