@@ -1,11 +1,12 @@
 import React from 'react';
-import Link from 'gatsby-link';
+import TemplateWrapper from '../layouts';
 import msu_img from '../../images/msu.png';
 import bcca_img from '../../images/bcca.png';
 import me_img from '../../images/me.jpg';
 import fnc_img from '../../images/fnc.png';
 import myra_img from '../../images/myra.png';
 import './index.css';
+
 
 const AboutBaseCamp = () => (
     <div style={{ display: 'flex' }}>
@@ -193,12 +194,12 @@ const Contact = () => (
 );
 
 const IndexPage = () => (
-    <div>
+    <TemplateWrapper>
         <h1>Hello World!</h1>
         <AboutBaseCamp />
         <WhatIveBeenDoing />
         <Contact />
-    </div>
+    </TemplateWrapper>
 );
 
 export default IndexPage;
