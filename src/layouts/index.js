@@ -9,6 +9,7 @@ const TemplateWrapper = ({ children }) => (
     <div>
         <Helmet title="Nate Clark">
             <html lang="en" />
+            <meta name="Description" content="Nate Clark's home page. Nate is a Software Developer and Educator in Water Valley, MS." />
         </Helmet>
         <Header />
         <div
