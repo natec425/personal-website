@@ -16,7 +16,7 @@ module.exports = {
             resolve: 'gatsby-plugin-fathom',
             options: {
                 trackingUrl: 'mighty-basin-39306.herokuapp.com',
-                siteId: 'OMMNL'
+                siteId: 'PMPVP'
             }
         }
     ]
