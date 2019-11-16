@@ -166,9 +166,9 @@ const WhatIveBeenDoing = () => (
     <table>
       <tbody>
         <WhatIveBeenDoingHeaders />
-        <AtMsu />
-        <AtFnc />
         <AtMyra />
+        <AtFnc />
+        <AtMsu />
       </tbody>
     </table>
   </div>
