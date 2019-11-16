@@ -1,6 +1,6 @@
 import React from "react";
 import TemplateWrapper from "../layouts";
-import ExperienceEntryLogo from "../components/ExperienceEntryLogo";
+import ExperienceEntry from "../components/ExperienceEntry";
 import msu_img from "../../images/msu.png";
 import bcca_img from "../../images/bcca.png";
 import me_img from "../../images/me.jpg";
@@ -55,97 +55,97 @@ const AboutBaseCamp = () => (
   </div>
 );
 
-const Td = props => (
-  <td className="what-ive-been-doing-td" {...props}>
-    {props.children}
-  </td>
-);
-
 const AtMsu = () => (
-  <tr>
-    <td className="hide-on-small">
-      <ExperienceEntryLogo
-        href="http://cse.msstate.edu/"
-        alt="Mississippi State University"
-        src={msu_img}
-      />
-    </td>
-    <Td>
-      In college I caught functional programming fever. It started out as
-      googling "functional programming in Python" every few days, but eventually
-      I grew into using functional programming languages like{" "}
-      <a href="http://www.scala-lang.org/">Scala</a>,{" "}
-      <a href="https://racket-lang.org/">Racket</a>, and{" "}
-      <a href="https://www.haskell.org/">Haskell</a>.
-    </Td>
-    <Td>
-      As an undergrad I noticed that the introductory programming labs were
-      understaffed, so I volunteered to help out. Eventually I ended up with a
-      teaching assistantship where I tried to contribute my voice to the design
-      of the introductory computer science curriculum at MSU.
-    </Td>
-  </tr>
+  <ExperienceEntry
+    logo={{
+      href: "http://cse.msstate.edu/",
+      alt: "Mississippi State University",
+      src: msu_img
+    }}
+    asASoftwareDeveloper={
+      <>
+        In college I caught functional programming fever. It started out as
+        googling "functional programming in Python" every few days, but
+        eventually I grew into using functional programming languages like{" "}
+        <a href="http://www.scala-lang.org/">Scala</a>,{" "}
+        <a href="https://racket-lang.org/">Racket</a>, and{" "}
+        <a href="https://www.haskell.org/">Haskell</a>.
+      </>
+    }
+    asAnEducator={
+      <>
+        As an undergrad I noticed that the introductory programming labs were
+        understaffed, so I volunteered to help out. Eventually I ended up with a
+        teaching assistantship where I tried to contribute my voice to the
+        design of the introductory computer science curriculum at MSU.
+      </>
+    }
+  />
 );
 
 const AtFnc = () => (
-  <tr>
-    <td className="hide-on-small">
-      <ExperienceEntryLogo
-        href="http://www.fncinc.com/"
-        src={fnc_img}
-        alt="FNC logo"
-      />
-    </td>
-    <Td>
-      I briefly worked at a financial technology company called FNC. I worked on
-      a team that built infrastructure services in{" "}
-      <a href="https://en.wikipedia.org/wiki/C_Sharp_%28programming_language%29">
-        C#
-      </a>{" "}
-      with <a href="https://www.asp.net/">ASP.Net</a>. When I could get away
-      with it, I would try any to write any tools or tests I needed in{" "}
-      <a href="http://fsharp.org/">F#</a>. One of my favorites was a hackathon
-      project where I implemented a small domain specific language for a rules
-      engine in F#.
-    </Td>
-    <Td>
-      Management at FNC was very supportive and allowed me to teach some
-      internal courses on functional programming in F#. I also led a small book
-      club that starting working through{" "}
-      <a href="https://www.amazon.com/Functional-Programming-Scala-Paul-Chiusano/dp/1617290653">
-        Functional Programming in Scala
-      </a>
-      . We didn't finish the book before I left the company, but it was a fun
-      group.
-    </Td>
-  </tr>
+  <ExperienceEntry
+    logo={{
+      href: "http://www.fncinc.com/",
+      src: fnc_img,
+      alt: "FNC"
+    }}
+    asASoftwareDeveloper={
+      <>
+        I briefly worked at a financial technology company called FNC. I worked
+        on a team that built infrastructure services in{" "}
+        <a href="https://en.wikipedia.org/wiki/C_Sharp_%28programming_language%29">
+          C#
+        </a>{" "}
+        with <a href="https://www.asp.net/">ASP.Net</a>. When I could get away
+        with it, I would try any to write any tools or tests I needed in{" "}
+        <a href="http://fsharp.org/">F#</a>. One of my favorites was a hackathon
+        project where I implemented a small domain specific language for a rules
+        engine in F#.
+      </>
+    }
+    asAnEducator={
+      <>
+        Management at FNC was very supportive and allowed me to teach some
+        internal courses on functional programming in F#. I also led a small
+        book club that starting working through{" "}
+        <a href="https://www.amazon.com/Functional-Programming-Scala-Paul-Chiusano/dp/1617290653">
+          Functional Programming in Scala
+        </a>
+        . We didn't finish the book before I left the company, but it was a fun
+        group.
+      </>
+    }
+  />
 );
 
 const AtMyra = () => (
-  <tr>
-    <td className="hide-on-small">
-      <ExperienceEntryLogo
-        href="http://myramirrors.com/"
-        src={myra_img}
-        alt="Myra Mirrors"
-      />
-    </td>
-    <Td>
-      At Myra Mirrors I was responsible for{" "}
-      <a href="https://facebook.github.io/react-native/">React Native</a>{" "}
-      development on the company's mobile companion application and{" "}
-      <a href="https://www.python.org/">Python</a> development on the smart
-      mirror itself. I also helped prepare and demonstrate our product at{" "}
-      <a href="https://www.ces.tech">CES</a> this year.
-    </Td>
-    <Td>
-      I didn't have any explicit responsibilities or opportunities as an
-      educator at Myra, but I tried to bring my experience as a teacher to the
-      table when interacting with colleagues. Good coworkers learn from each
-      other as they work together; so I tried to be mindful of learning from the
-      people around me.
-    </Td>
-  </tr>
+  <ExperienceEntry
+    logo={{
+      href: "http://myramirrors.com/",
+      src: myra_img,
+      alt: "Myra Mirrors"
+    }}
+    asASoftwareDeveloper={
+      <>
+        At Myra Mirrors I was responsible for{" "}
+        <a href="https://facebook.github.io/react-native/">React Native</a>{" "}
+        development on the company's mobile companion application and{" "}
+        <a href="https://www.python.org/">Python</a> development on the smart
+        mirror itself. I also helped prepare and demonstrate our product at{" "}
+        <a href="https://www.ces.tech">CES</a> this year.
+      </>
+    }
+    asAnEducator={
+      <>
+        I didn't have any explicit responsibilities or opportunities as an
+        educator at Myra, but I tried to bring my experience as a teacher to the
+        table when interacting with colleagues. Good coworkers learn from each
+        other as they work together; so I tried to be mindful of learning from
+        the people around me.
+      </>
+    }
+  />
 );
 
 const WhatIveBeenDoingHeaders = () => (
