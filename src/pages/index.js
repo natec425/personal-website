@@ -223,7 +223,8 @@ const Contact = () => (
 
     <p>
       Other than email, my github account is{" "}
-      <a href="https://github.com/natec425">natec425</a> if you want to look
+      <a href="https://github.com/natec425">natec425</a> and my codepen is{" "}
+      <a href="https://codepen.io/natec425">natec425</a> if you want to look
       around.
     </p>
   </div>
