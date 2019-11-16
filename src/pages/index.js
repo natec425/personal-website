@@ -1,12 +1,12 @@
 import React from "react";
 import TemplateWrapper from "../layouts";
 import ExperienceEntry from "../components/ExperienceEntry";
-import msu_img from "../../images/msu.png";
-import bcca_img from "../../images/bcca.png";
-import me_img from "../../images/me.jpg";
-import fnc_img from "../../images/fnc.png";
-import myra_img from "../../images/myra.png";
-import collegiatetutoring_img from "../../images/collegiate-tutoring.png";
+import MsuImage from "../../images/msu.png";
+import BccaImg from "../../images/bcca.png";
+import MeImg from "../../images/me.jpg";
+import FncImg from "../../images/fnc.png";
+import MyraImg from "../../images/myra.png";
+import CollegiateTutoringImg from "../../images/collegiate-tutoring.png";
 import "./index.css";
 
 const AboutBaseCamp = () => (
@@ -19,7 +19,7 @@ const AboutBaseCamp = () => (
           marginLeft: 20,
           marginRight: 20
         }}
-        src={bcca_img}
+        src={BccaImg}
         alt="Base Camp Coding Academy Logo"
       />
     </a>
@@ -50,7 +50,7 @@ const AboutBaseCamp = () => (
         height: 100,
         float: "right"
       }}
-      src={me_img}
+      src={MeImg}
       alt="Picture of Nate Clark"
     />
   </div>
@@ -61,7 +61,7 @@ const AtMsu = () => (
     logo={{
       href: "http://cse.msstate.edu/",
       alt: "Mississippi State University",
-      src: msu_img
+      src: MsuImage
     }}
     asASoftwareDeveloper={
       <>
@@ -88,7 +88,7 @@ const AtFnc = () => (
   <ExperienceEntry
     logo={{
       href: "http://www.fncinc.com/",
-      src: fnc_img,
+      src: FncImg,
       alt: "FNC"
     }}
     asASoftwareDeveloper={
@@ -124,7 +124,7 @@ const AtMyra = () => (
   <ExperienceEntry
     logo={{
       href: "http://myramirrors.com/",
-      src: myra_img,
+      src: MyraImg,
       alt: "Myra Mirrors"
     }}
     asASoftwareDeveloper={
@@ -154,7 +154,7 @@ const AtCollegiateTutoring = () => (
     logo={{
       href: "https://www.collegiatetutoring.com/",
       alt: "Collegiate Tutoring",
-      src: collegiatetutoring_img
+      src: CollegiateTutoringImg
     }}
     asASoftwareDeveloper={
       <>
