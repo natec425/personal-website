@@ -1,5 +1,6 @@
 import React from "react";
 import TemplateWrapper from "../layouts";
+import ExperienceEntryLogo from "../components/ExperienceEntryLogo";
 import msu_img from "../../images/msu.png";
 import bcca_img from "../../images/bcca.png";
 import me_img from "../../images/me.jpg";
@@ -63,13 +64,11 @@ const Td = props => (
 const AtMsu = () => (
   <tr>
     <td className="hide-on-small">
-      <a href="http://cse.msstate.edu/">
-        <img
-          style={{ minWidth: 100 }}
-          src={msu_img}
-          alt="Mississippi State University Logo"
-        />
-      </a>
+      <ExperienceEntryLogo
+        href="http://cse.msstate.edu/"
+        alt="Mississippi State University"
+        src={msu_img}
+      />
     </td>
     <Td>
       In college I caught functional programming fever. It started out as
@@ -91,9 +90,11 @@ const AtMsu = () => (
 const AtFnc = () => (
   <tr>
     <td className="hide-on-small">
-      <a href="http://www.fncinc.com/">
-        <img src={fnc_img} style={{ minWidth: 100 }} alt="FNC logo" />
-      </a>
+      <ExperienceEntryLogo
+        href="http://www.fncinc.com/"
+        src={fnc_img}
+        alt="FNC logo"
+      />
     </td>
     <Td>
       I briefly worked at a financial technology company called FNC. I worked on
@@ -123,9 +124,11 @@ const AtFnc = () => (
 const AtMyra = () => (
   <tr>
     <td className="hide-on-small">
-      <a href="http://myramirrors.com/">
-        <img src={myra_img} style={{ minWidth: 100 }} alt="Myra Mirrors Logo" />
-      </a>
+      <ExperienceEntryLogo
+        href="http://myramirrors.com/"
+        src={myra_img}
+        alt="Myra Mirrors"
+      />
     </td>
     <Td>
       At Myra Mirrors I was responsible for{" "}
