@@ -25,7 +25,7 @@ const AboutBaseCamp = () => (
     </a>
     <div style={{ flex: 1 }}>
       <p>
-        I'm Technical Director at{" "}
+        I'm Senior Technical Director at{" "}
         <a href="https://basecampcodingacademy.org/">
           Base Camp Coding Academy
         </a>
