@@ -58,6 +58,7 @@ const AboutBaseCamp = () => (
 
 const AtMsu = () => (
   <ExperienceEntry
+    title="Mississippi State University"
     logo={{
       href: "http://cse.msstate.edu/",
       alt: "Mississippi State University",
@@ -86,6 +87,7 @@ const AtMsu = () => (
 
 const AtFnc = () => (
   <ExperienceEntry
+    title="FNC"
     logo={{
       href: "http://www.fncinc.com/",
       src: FncImg,
@@ -122,8 +124,8 @@ const AtFnc = () => (
 
 const AtMyra = () => (
   <ExperienceEntry
+    title="Myra Mirrors"
     logo={{
-      href: "http://myramirrors.com/",
       src: MyraImg,
       alt: "Myra Mirrors"
     }}
@@ -151,6 +153,7 @@ const AtMyra = () => (
 
 const AtCollegiateTutoring = () => (
   <ExperienceEntry
+    title="Collegiate Tutoring"
     logo={{
       href: "https://www.collegiatetutoring.com/",
       alt: "Collegiate Tutoring",
@@ -184,31 +187,14 @@ const AtCollegiateTutoring = () => (
   />
 );
 
-const WhatIveBeenDoingHeaders = () => (
-  <tr>
-    <td className="hide-on-small" />
-    <td>
-      <h3>As a Software Developer...</h3>
-    </td>
-    <td>
-      <h3>As an Educator...</h3>
-    </td>
-  </tr>
-);
-
 const WhatIveBeenDoing = () => (
-  <div>
+  <section id="what-ive-been-doing">
     <h2>What I've been doing</h2>
-    <table>
-      <tbody>
-        <WhatIveBeenDoingHeaders />
-        <AtCollegiateTutoring />
-        <AtMyra />
-        <AtFnc />
-        <AtMsu />
-      </tbody>
-    </table>
-  </div>
+    <AtCollegiateTutoring />
+    <AtMyra />
+    <AtFnc />
+    <AtMsu />
+  </section>
 );
 
 const Contact = () => (
