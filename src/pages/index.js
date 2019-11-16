@@ -222,10 +222,11 @@ const Contact = () => (
     </p>
 
     <p>
-      Other than email, my github account is{" "}
-      <a href="https://github.com/natec425">natec425</a> and my codepen is{" "}
-      <a href="https://codepen.io/natec425">natec425</a> if you want to look
-      around.
+      Other than email: my GitHub is{" "}
+      <a href="https://github.com/natec425">natec425</a>, my Codepen is{" "}
+      <a href="https://codepen.io/natec425">natec425</a>, and my LinkedIn is...
+      you guessed it{" "}
+      <a href="https://www.linkedin.com/in/natec425/">natec425</a>.
     </p>
   </div>
 );
