@@ -6,6 +6,7 @@ import bcca_img from "../../images/bcca.png";
 import me_img from "../../images/me.jpg";
 import fnc_img from "../../images/fnc.png";
 import myra_img from "../../images/myra.png";
+import collegiatetutoring_img from "../../images/collegiate-tutoring.png";
 import "./index.css";
 
 const AboutBaseCamp = () => (
@@ -148,6 +149,41 @@ const AtMyra = () => (
   />
 );
 
+const AtCollegiateTutoring = () => (
+  <ExperienceEntry
+    logo={{
+      href: "https://www.collegiatetutoring.com/",
+      alt: "Collegiate Tutoring",
+      src: collegiatetutoring_img
+    }}
+    asASoftwareDeveloper={
+      <>
+        At Collegiate Tutoring I built the API to support their two sided
+        marketplace between tutors and students using{" "}
+        <a href="https://www.django-rest-framework.org/">
+          Django REST Framework
+        </a>
+        . The platform has an emphasis on supporting Greek organizations, so
+        there was some fun code involved with splitting expenses between
+        students, potentially their organization's budget, and collecting a
+        platform fee. Payments were processed using{" "}
+        <a href="https://stripe.com/">Stripe</a>. We used{" "}
+        <a href="http://www.celeryproject.org/">celery</a> and{" "}
+        <a href="https://redis.io/">Redis</a> for background jobs.
+      </>
+    }
+    asAnEducator={
+      <>
+        I was super excited to work with one of my graduates from Base Camp
+        Coding Academy. One of my past graduates was brought on to develop an
+        SMS reminder system using <a href="https://www.twilio.com/">Twilio</a>,
+        and it was a lot of fun to get to work with them outside of the
+        classroom.
+      </>
+    }
+  />
+);
+
 const WhatIveBeenDoingHeaders = () => (
   <tr>
     <td className="hide-on-small" />
@@ -166,6 +202,7 @@ const WhatIveBeenDoing = () => (
     <table>
       <tbody>
         <WhatIveBeenDoingHeaders />
+        <AtCollegiateTutoring />
         <AtMyra />
         <AtFnc />
         <AtMsu />
