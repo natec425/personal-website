@@ -10,6 +10,7 @@ const ExperienceEntryLogo = props => {
 const ExperienceEntry = props => (
   <section className="experience-entry">
     <section className="experience-entry__logo">
+      <ExperienceEntryLogo {...props.logo} />
       <h3>
         {props.logo.href ? (
           <a href={props.logo.href}>{props.title}</a>
@@ -17,7 +18,6 @@ const ExperienceEntry = props => (
           props.title
         )}
       </h3>
-      <ExperienceEntryLogo {...props.logo} />
     </section>
     <section className="experience-entry__software-developer">
       <h4>As a Software Developer...</h4>
