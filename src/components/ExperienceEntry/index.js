@@ -8,16 +8,16 @@ const ExperienceEntryLogo = props => {
 };
 
 const ExperienceEntry = props => (
-  <section class="experience-entry">
-    <section class="experience-entry__logo">
+  <section className="experience-entry">
+    <section className="experience-entry__logo">
       <h3>{props.title}</h3>
       <ExperienceEntryLogo {...props.logo} />
     </section>
-    <section class="experience-entry__software-developer">
+    <section className="experience-entry__software-developer">
       <h4>As a Software Developer...</h4>
       {props.asASoftwareDeveloper}
     </section>
-    <section class="experience-entry__educator">
+    <section className="experience-entry__educator">
       <h4>As an Educator...</h4>
       {props.asAnEducator}
     </section>
