@@ -20,7 +20,7 @@ const AboutBaseCamp = () => (
           marginRight: 20
         }}
         src={BccaImg}
-        alt="Base Camp Coding Academy Logo"
+        alt="Base Camp Coding Academy"
       />
     </a>
     <div style={{ flex: 1 }}>
@@ -51,7 +51,7 @@ const AboutBaseCamp = () => (
         float: "right"
       }}
       src={MeImg}
-      alt="Picture of Nate Clark"
+      alt="Nate Clark"
     />
   </div>
 );
