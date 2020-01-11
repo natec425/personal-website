@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, graphql } from "gatsby";
 import TemplateWrapper from "../layouts";
 import ExperienceEntry from "../components/ExperienceEntry";
 import MsuImage from "../../images/msu.png";
@@ -187,9 +188,21 @@ const AtCollegiateTutoring = () => (
   />
 );
 
+const WhatIveBeenSaying = ({ posts }) => (
+  <section id="what-ive-been-saying">
+    <h2>What I've Been Saying</h2>
+    {posts.map(({ node }) => (
+      <p key={node.fields.slug}>
+        {node.frontmatter.date} -{" "}
+        <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
+      </p>
+    ))}
+  </section>
+);
+
 const WhatIveBeenDoing = () => (
   <section id="what-ive-been-doing">
-    <h2>What I've been doing</h2>
+    <h2>What I've Been Doing</h2>
     <AtCollegiateTutoring />
     <AtMyra />
     <AtFnc />
@@ -217,13 +230,32 @@ const Contact = () => (
   </div>
 );
 
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <TemplateWrapper>
     <h1>Hello World!</h1>
     <AboutBaseCamp />
+    <WhatIveBeenSaying posts={data.allMarkdownRemark.edges} />
     <WhatIveBeenDoing />
     <Contact />
   </TemplateWrapper>
 );
 
 export default IndexPage;
+
+export const pageQuery = graphql`
+  query {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            title
+          }
+        }
+      }
+    }
+  }
+`;
