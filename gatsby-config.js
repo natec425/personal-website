@@ -56,7 +56,6 @@ module.exports = {
         trackingUrl: "mighty-basin-39306.herokuapp.com",
         siteId: "PMPVP"
       }
-    },
-    "gatsby-plugin-feed"
+    }
   ]
 };
