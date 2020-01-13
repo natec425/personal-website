@@ -84,7 +84,7 @@ annoying in a second, but first let's talk about why we do this at all.
 
 ## Why Do We Do It?
 
-From my exposure, we do it for two reasons: testing, we have to. I'm
+From my exposure, we do it for two reasons: testing, and we have to. I'm
 certain my perspective is limited, but I'll limit myself to discussing
 these two reasons.
 
@@ -140,13 +140,19 @@ def some_function(...):
 We don't want to write `real_check_credentials` all over the place in
 our application. The good news is that you usually don't have to.
 Most contexts where you hear people use the term "dependency injection"
-are working inside a dependency injection container. If you see some
-of the following thing, you might be inside a dependency injection
-container:
+are working inside a dependency injection container. A dependency injection
+container is the central piece of machinery that allows for a more pleasant
+experience with this style of programming. If you see some of the following
+things, you might be inside a dependency injection container:
 
-- A way of registering dependencies: `@Injectable`, `@pytest.fixture`, `services.AddScoped`
+- A way of registering dependencies:
+  - `@Injectable` (Angular)
+  - `@pytest.fixture` (pytest)
+  - `services.AddScoped` (ASP.NET)
 - A way of hooking into a dependency context or requesting dependencies:
-  `@AutoWire`, `@Component`, arguments you don't provide
+  - `@AutoWire` (Spring)
+  - `@Component` (Angular)
+  - arguments you don't provide (pretty much all of them)
 - The framework calls the function or constructs the object for you
 
 Looking at those three clues, we can get a good idea of what must be going
@@ -154,7 +160,10 @@ on behind the scenes. There must be some registry of dependencies being
 maintained and provided on demand. The third bullet outlines the trick to
 making it all work. If you were to construct the object or call the function
 yourself, you would have to provide the argument. However, if the framework
-is doing the work it can provide the required dependencies at the appropriate time.
+is doing the work it can provide the required dependencies at the appropriate
+time. This is the dependency injection container at work. You register
+dependencies, request dependencies, and provide some sort of class or function
+to be called where that registry is available.
 
 ## Thanks
 
