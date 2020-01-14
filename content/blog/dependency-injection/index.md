@@ -84,9 +84,9 @@ annoying in a second, but first let's talk about why we do this at all.
 
 ## Why Do We Do It?
 
-From my exposure, we do it for two reasons: testing, and we have to. I'm
-certain my perspective is limited, but I'll limit myself to discussing
-these two reasons.
+From my exposure, we do it for three reasons: testing, decoupling, and we have
+to. I'm certain my perspective is limited, but I'll limit myself to discussing
+these three reasons.
 
 ### Testing
 
@@ -120,6 +120,22 @@ still providing a
 The example where we provide `always_pass` as an argument just requires
 less heavy lifting.
 
+### Decoupling
+
+I don't want to spend a ton of time on this topic, but I think it is
+important to acknowledge. The style of programming allowed by dependency
+injection supports a more loosely coupled architecture. As a proof of concept
+we can look at our `login` function. If `login` has a hard coded dependency
+on `check_credentials`, it is coupled to the code inside it. That means
+`login` is coupled `check_credentials` (and its dependencies). So by moving
+`check_credentials` into an argument, we move ourselves towards the
+[dependency inversion principle](https://en.wikipedia.org/wiki/Dependency_inversion_principle).
+We are now depending on an interface instead of an implementation. When it is
+hard coded, we are depending on the specific implementation. When it is an
+argument we are depending on however we use it. In the case of
+`check_credentials`, we are now depending on it being a function with the
+signature `(str, str) -> bool`.
+
 ### We Have To
 
 I think the other most common reason is that your tool of choice makes
@@ -150,7 +166,7 @@ things, you might be inside a dependency injection container:
   - `@pytest.fixture` (pytest)
   - `services.AddScoped` (ASP.NET)
 - A way of hooking into a dependency context or requesting dependencies:
-  - `@AutoWire` (Spring)
+  - `@Autowired` (Spring)
   - `@Component` (Angular)
   - arguments you don't provide (pretty much all of them)
 - The framework calls the function or constructs the object for you
