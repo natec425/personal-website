@@ -205,13 +205,13 @@ In this example:
 
 ## Learning More
 
-These two courses really cemented a lot of this comparative stuff for me. I think are pretty great, and I highly recommend them.
+These two courses really cemented a lot of this comparative stuff for me. I think they are pretty great, and I highly recommend them.
 
 - [Coursera - UW - Programming Languages](https://www.coursera.org/learn/programming-languages)
 - [Coursera - EPFL - Functional Programming Principles in Scala](https://www.coursera.org/learn/progfun1)
 
 ## Thanks
 
-Hopefully this article has helped your cross that boundary between statically typed, functional languages and class based, object oriented languages a little smoother.
+Hopefully this article has helped you cross that boundary between statically typed, functional languages and class based, object oriented languages a little smoother.
 
 Thanks for reading!
