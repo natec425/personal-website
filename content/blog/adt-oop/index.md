@@ -45,7 +45,6 @@ type account =
 This code introduces one new type, `account`, and three ways to construct a value of that type, `None`, `Instagram`, and `Facebook`. The `None` constructor doesn't require an data. The `Instagram` constructor requires a `string`. The `Facebook` constructor requires a `string` and an `int`. Hmmm... new type... constructors... Let's eagerly jump to an object oriented version of this code.
 
 ```typescript
-// attempt 1
 class Account {
   name?: string;
   age?: number;
