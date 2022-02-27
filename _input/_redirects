@@ -1,0 +1,5 @@
+# support old routes from Gatsby-based site
+/rust-implementing-fn/  /blog/rust-implementing-fn/
+/inspecting-python-functions/   /blog/inspecting-python-functions/
+/adt-oop/   /blog/adt-oop/
+/dependency-injection/ /blog/dependency-injection/
