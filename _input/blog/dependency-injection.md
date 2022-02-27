@@ -1,7 +1,8 @@
 ---
 title: Dependency Injection From First Principles
-date: "2020-01-11T11:42:12-06:00"
+date: 2020-01-11
 description: A look from first principles at dependency injection.
+layout: blog_layout
 ---
 
 If you are starting to learn web development, you have probably run into

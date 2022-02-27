@@ -1,7 +1,8 @@
 ---
 title: ADTs in OOP - FTW or WTF?
-date: "2020-01-16T08:34:02-06:00"
+date: 2020-01-16
 description: What would Algebraic Data Types look like in Object Oriented Programming?
+layout: blog_layout
 ---
 
 A lot of times it might feel like some development communities are far apart. This is totally understandable. We are all doing our best, and we don't have the time or energy to stay up to date with every corner of the development world. In this post I want to bring the typed functional world and the object oriented world a little closer together. To do so, let's take a small snippet adapted from the [ReasonML documentation](https://reasonml.github.io/docs/en/variant#constructor-arguments) and dissect it through porting to TypeScript. You can play with this snippet on the [try reason website](https://reasonml.github.io/en/try?rrjsx=true&reason=C4TwDgpgBAhgxnA9gVwHbCgXgFBSgHygDlFUJcCoBJVAZ2BgHMAnGAWwAp7mBLVRgJQVCAMXgQARokQBrLsF78ANFD7ABAbmzYANhAwsI+voyxQO8JGnVYAfBVoB3HsDgALc5ZToBUAN7CxKTQmPZ4eACQAEQAEjwAhFGBYnCS0nKo7BAqTBC+oVAUkbE8UFFQANQVUJls0FVlKiAoAOTM0OUN3CYA+ogAZj1qFox5ldXlIBAwzLRQiDoAJgB0SXiENPRMrJy1Y6FFUNExEDo6iGXjNVlXUYkUAL5auvpQbCAAggjeGJjUdAwWOwOFFMsAIFEhHoMO8AOLtYz8MyGRGMDjvL5WHzYABStGW5zRcIRwBMAiAA).
