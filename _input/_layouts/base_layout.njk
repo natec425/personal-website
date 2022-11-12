@@ -37,17 +37,9 @@
         -webkit-font-smoothing: antialiased;
       }
 
-      img {
-        display: none;
-      }
-
       @media (min-width: 600px) {
         :root {
           font-size: 20px;
-        }
-
-        img {
-          display: initial;
         }
       }
 
@@ -74,10 +66,7 @@
       <p>Software Developer</p>
       <p>Educator</p>
     </header>
-    <main style="
-      margin: 0 auto;
-      max-width: 50rem;
-    ">
+    <main>
       {{ content | safe }}
     </main>
   </body>

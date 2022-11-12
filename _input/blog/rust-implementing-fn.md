@@ -3,6 +3,7 @@ title: Vanity Rust - Implementing Fn on Rust Structs
 date: 2020-02-09
 description: Learn how to use nightly rust features to treat your structs like functions.
 layout: blog_layout
+tags: post
 ---
 
 The other night I was doing a [coding challenge on codewars](https://www.codewars.com/kata/calculating-with-functions/python). It didn't really have anything to do with algorithms. Instead it focused on your ability to construct a specific API. On codewars, the challenge is only available in Python, JavaScript, and Ruby, but I thought it would be fun to try to solve it with Rust. It turns out that I needed to use some nightly Rust features, so I thought I'd share. The challenge can be summed up in the following line:

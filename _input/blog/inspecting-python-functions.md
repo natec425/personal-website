@@ -3,6 +3,7 @@ title: Inspecting function annotations in Python
 date: 2020-02-02
 description: Learn how to inspect function annotations in Python and build some neat tricks.
 layout: blog_layout
+tags: post
 ---
 
 For this article, I'm just going to spend some time in the python shell. Please let me know if this is helpful or terrible 😄.

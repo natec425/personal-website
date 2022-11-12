@@ -6,8 +6,10 @@ layout: base_layout
   rel="stylesheet"
 />
 
-<header style="margin-bottom: 1.5rem">
-    <h1>{{ title }}</h1>
-    <p>{{ date.toLocaleString('en-US', { dateStyle: 'medium' }) }}</p>
-</header>
-{{ content | safe }}
+<div style="margin: 0 auto; max-width: 50rem">
+	<header style="margin-bottom: 1.5rem">
+	    <h1>{{ title }}</h1>
+	    <p>{{ date.toLocaleString('en-US', { dateStyle: 'medium' }) }}</p>
+	</header>
+	{{ content | safe }}
+</div>

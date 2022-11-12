@@ -1,0 +1,31 @@
+---
+layout: base_layout
+---
+
+<nav>
+
+<h2>Links</h2>
+
+<li><a href="https://github.com/natec425">Github</a></li>
+<li><a href="https://www.linkedin.com/in/natec425/">LinkedIn</a></li>
+
+</nav>
+
+<h2>I try to...</h2>
+
+<ul>
+  <li>Write software</li>
+  <li>Teach</li>
+  <li>Create healthy teams</li>
+  <li>Help people</li>
+</ul>
+
+<h2>Stuff I've written</h2>
+
+<ul>
+  {%- for post in collections.post | reverse -%}
+    <li>
+	  {{ post.data.date.toLocaleString('en-US', { dateStyle: 'medium' }) }}
+	   - <a href="{{ post.url }}">{{ post.data.title }}</li></a>
+  {%- endfor -%}
+</ul>

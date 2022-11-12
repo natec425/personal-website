@@ -3,6 +3,7 @@ title: Dependency Injection From First Principles
 date: 2020-01-11
 description: A look from first principles at dependency injection.
 layout: blog_layout
+tags: post
 ---
 
 If you are starting to learn web development, you have probably run into
